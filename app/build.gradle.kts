@@ -1,8 +1,18 @@
+import java.util.Properties
 import java.util.zip.ZipFile
 import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.Sync
 
-plugins { id("com.android.application"); kotlin("android"); kotlin("plugin.compose") }
+plugins { alias(libs.plugins.android.application); alias(libs.plugins.kotlin.android); alias(libs.plugins.kotlin.compose) }
+
+// 发行签名由发行者自行提供：复制 keystore.properties.example 为 keystore.properties 并填入真实值。
+// 仓库不保存任何私钥；keystore.properties 已被 .gitignore 忽略。
+// 文件不存在时 release 仍可构建出未签名包。
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+if (keystorePropertiesFile.exists()) {
+    keystorePropertiesFile.inputStream().use { keystoreProperties.load(it) }
+}
 android {
     namespace = "app.easepod"
     compileSdk = 35
@@ -20,7 +30,25 @@ android {
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     sourceSets.getByName("main").assets.srcDir(layout.buildDirectory.dir("generated/licenseAssets"))
     sourceSets.getByName("main").assets.srcDir(layout.buildDirectory.dir("generated/pluginMarketAssets"))
-    buildTypes { release { isMinifyEnabled = true; proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro") } }
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+        }
+    }
 }
 
 val generateLicenseAssets by tasks.registering {
@@ -72,27 +100,27 @@ tasks.matching { it.name.endsWith("Assets") && it.name.startsWith("merge") || it
     .configureEach { dependsOn(generateLicenseAssets, generatePluginMarketAssets, generateThemeMarketAssets) }
 dependencies {
     implementation(project(":core")); implementation(project(":data")); implementation(project(":playback")); implementation(project(":plugins"))
-    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-    implementation("androidx.activity:activity-compose:1.10.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material:material-icons-extended")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("io.coil-kt:coil-compose:2.7.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.google.zxing:core:3.5.3")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2024.12.01"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test:rules:1.6.1")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.room:room-runtime:2.6.1")
-    androidTestImplementation("androidx.media3:media3-common:1.5.1")
-    androidTestImplementation("androidx.media3:media3-exoplayer:1.5.1")
-    androidTestImplementation("androidx.media3:media3-datasource-okhttp:1.5.1")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-    testImplementation("junit:junit:4.13.2")
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.coil.compose)
+    implementation(libs.okhttp)
+    implementation(libs.zxing.core)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.rules)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.room.runtime)
+    androidTestImplementation(libs.androidx.media3.common)
+    androidTestImplementation(libs.androidx.media3.exoplayer)
+    androidTestImplementation(libs.androidx.media3.datasource.okhttp)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    testImplementation(libs.junit)
 }

@@ -1,6 +1,6 @@
 # 2026-09-08 锁屏手势、全屏显示与集成回归
 
-设备：HiBreak，Android 14 / API 34，824 × 1648。工具链：JDK 17、SDK 35、Gradle 8.9。本轮使用工程已解压的 `.tools/gradle-8.9/bin/gradle`，与 Wrapper 固定版本一致。
+设备：HiBreak，Android 14 / API 34，824 × 1648。工具链：JDK 17、SDK 35、Gradle 8.9。本轮使用本机已解压的 Gradle 8.9 分发版，版本与 Gradle Wrapper 固定的 8.9 一致。
 
 ## 实现
 

@@ -1,10 +1,10 @@
 import com.google.protobuf.gradle.id
 
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    id("com.google.devtools.ksp")
-    id("com.google.protobuf")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.protobuf)
 }
 
 android {
@@ -31,19 +31,19 @@ protobuf {
 
 dependencies {
     implementation(project(":core"))
-    implementation("androidx.media3:media3-common:1.5.1")
-    implementation("androidx.media3:media3-extractor:1.5.1")
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.datastore:datastore:1.1.2")
-    implementation("com.google.protobuf:protobuf-javalite:4.29.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-    implementation("org.bouncycastle:bcprov-jdk18on:1.79")
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.robolectric:robolectric:4.14.1")
-    testImplementation("androidx.test:core:1.6.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    implementation(libs.androidx.media3.common)
+    implementation(libs.androidx.media3.extractor)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.datastore)
+    implementation(libs.protobuf.javalite)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.bouncycastle)
+    testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit)
 }

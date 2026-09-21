@@ -1,4 +1,4 @@
-plugins { id("com.android.application"); kotlin("android") }
+plugins { alias(libs.plugins.android.application); alias(libs.plugins.kotlin.android) }
 android {
     namespace = "app.easepod.sampleplugin"; compileSdk = 35
     defaultConfig { applicationId = "app.easepod.sampleplugin"; minSdk = 34; targetSdk = 35; versionCode = 1; versionName = "1.0"; testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" }
@@ -7,6 +7,6 @@ android {
 }
 dependencies {
     implementation(project(":plugin-contract"))
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit)
 }

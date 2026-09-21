@@ -16,6 +16,7 @@ local.properties
 *.pem
 *.key
 signing.properties
+keystore.properties
 
 # IDE / 编辑器
 .idea/

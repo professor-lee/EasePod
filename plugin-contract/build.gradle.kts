@@ -1,4 +1,4 @@
-plugins { id("com.android.library"); kotlin("android"); id("org.jetbrains.kotlin.plugin.parcelize") }
+plugins { alias(libs.plugins.android.library); alias(libs.plugins.kotlin.android); alias(libs.plugins.kotlin.parcelize) }
 android {
     namespace = "app.easepod.contract"; compileSdk = 35
     defaultConfig { minSdk = 34 }
@@ -6,4 +6,4 @@ android {
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
 }
-dependencies { api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0") }
+dependencies { api(libs.kotlinx.coroutines.android) }

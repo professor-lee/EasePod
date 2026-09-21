@@ -1,62 +1,328 @@
-# EasePod Android
+<h1 align="center"><img src="assets/logo.svg" width="96" height="96" alt="EasePod"></h1>
 
-EasePod 的正式 Android 工程。最低 Android 14（API 34），目标 API 35；主要使用 Kotlin、Jetpack Compose、Media3、Room、Proto DataStore。界面与轮盘规则采用 [已冻结基线](../docs/easepod-architecture/frozen-ui-baseline.md)，迭代进度见 [DEVELOPMENT.md](DEVELOPMENT.md)，构建和设备验收索引见 [verification/README.md](verification/README.md)。网易云服务插件位于 `netease-plugin/`，作为独立 APK 随交付包分发；协议来源和能力边界见 [模块说明](netease-plugin/PROTOCOL_SOURCES.md)。
+<p align="center">
+	<a href="README.md">English</a>
+	&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a href="README_zh.md">简体中文</a>
+</p>
 
-## 首次运行
+<p align="center" style="color:gray;">
+	A local-first Android music player with a classic iPod-style click wheel and LCD interface.
+</p>
 
-主 APK 是可独立使用的本地播放器。初次运行不写入示例歌曲，不自动播放；本地歌曲、专辑和离线列表按真实数据呈现空状态。网易云插件可从交付包中选择安装，未安装时首次启动不会发起网易云请求。内置 Local Library 与银色、黑色、OLED 黑主题无需安装其他 APK。
+<p align="center">
+    <img src="https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
+    <img src="https://img.shields.io/badge/Android-14%2B%20(API%2034)-3DDC84?logo=android&logoColor=white" alt="Android 14+">
+    <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?logo=opensourceinitiative&logoColor=white" alt="License">
+    <img src="https://img.shields.io/github/stars/professor-lee/EasePod?style=flat&label=Stars&color=FFC700&logo=github&logoColor=white" alt="Stars">
+    <img src="https://img.shields.io/github/forks/professor-lee/EasePod?style=flat&label=Forks&color=60adff&logo=git-fork&logoColor=white" alt="Forks">
+    <img src="https://img.shields.io/github/last-commit/professor-lee/EasePod?color=rebeccapurple&logo=git&logoColor=white" alt="Last Commit">
+    <img src="https://img.shields.io/github/languages/code-size/professor-lee/EasePod?style=flat&color=blueviolet" alt="Code Size">
+</p>
 
-在“设置 > 本地与存储 > 本地音乐文件夹”通过 Android 系统选择器授予一个文件夹的只读访问权限。扫描范围是根目录单曲与一级子目录专辑，不继续递归；支持 MP3、WAV、FLAC、OGG，专辑目录内的 `cover.png`、`cover.jpg`、`cover.jpeg`、`cover.gif` 可作为封面。更换目录或重新扫描时，成功发布新索引后再替换现有库。
+## Project Overview
 
-播放、队列、本地搜索与歌单、歌词、睡眠定时、缓存管理、加密备份与恢复由宿主提供。云端收藏与歌单编辑、账号、网络音质和离线下载根据已批准插件的实际能力显示；示例服务不支持的能力不会伪造成功结果。
+EasePod is an Android music player built around a physical-feeling interaction model: an upper LCD area and a
+centered click wheel, navigated the way a classic iPod was. It targets **Android 14 (API 34) and above** and is
+written in Kotlin with Jetpack Compose, Media3, Room, and Proto DataStore.
 
-“防误触”默认关闭，打开后拦截 LCD 的直接触摸，保留轮盘、键盘、无障碍和媒体控制；文本输入例外仅存在于当前表单会话。“锁屏覆盖”默认关闭，开启后使用 `setShowWhenLocked` 复用完整播放器。它受 Android 后台启动与 ROM 窗口策略限制，不保证每次开屏都自动拉起；无法显示时仍使用标准 MediaSession 控件。敏感操作需要系统解锁并重新确认。
+The host application is a **complete local player on its own**. It never ships sample tracks and never plays audio
+on first run; the local library, albums, and playlists render real empty states until you grant access to a music
+folder. Cloud music services are optional **separately installed APK plugins** connected over a bounded AIDL
+contract, so the host keeps working with none of them installed.
 
-锁屏覆盖显示时，从底部系统导航区域上方向上滑动可直接进入系统解锁流程，PIN 等认证方式由设备设置决定；防误触不拦截该手势。“设置 > 全屏显示”默认关闭，开启后隐藏顶部系统状态栏，保留底部导航和播放器 LCD 状态栏；关闭即时恢复，偏好随重启和备份保存。
+The interface and interaction rules are frozen and documented in-repo: the main menu, the wheel semantics, touch
+guard, lock-screen gating, and the Cover Flow animation are treated as a fixed baseline rather than open design
+space. See [DEVELOPMENT.md](DEVELOPMENT.md) for the frozen constraints and the iteration log.
 
-## 构建
+## Main Features
 
-安装 JDK 17、Android SDK Platform 35 和 Build Tools 35.0.0，设置 `JAVA_HOME`，并设置 `ANDROID_HOME` 或使用未纳入版本控制的 `local.properties` 指定 `sdk.dir`。以下命令在 `project/` 中运行：
+- **Classic click-wheel navigation**: `MENU` goes back, center confirms, left/right change track, down toggles
+  play/pause, and rotating the wheel moves focus
+- **Cover Flow** with bidirectional translate/scale/tilt at roughly 220 ms, looping at both ends and snapping
+  immediately when reduced motion is requested
+- **Local library over SAF** from a single root folder: root-level audio files become singles, first-level
+  subdirectories become albums, and scanning does not recurse. `mp3`, `wav`, `flac`, `ogg`, with
+  `cover.png` / `cover.jpg` / `cover.jpeg` / `cover.gif` as album art
+- **Playlists and queue**: transactional playlist creation and appends, queue editing, remembered shuffle/repeat
+  state, and playback queue checkpoint restore across process restarts
+- **Lyrics**: embedded ID3 `USLT`/`SYLT` and Vorbis comments, with a page lyrics overlay
+- **Sleep timer** (off / 15 / 30 / 60 minutes)
+- **Stream cache** with a configurable size limit and account-scoped cleanup
+- **Offline downloads** through WorkManager, with SHA-256 and length validation, authorization-expiry checks, and
+  resume
+- **Encrypted backup and restore**: Argon2id (64 MiB, t=3, p=1) followed by AES-256-GCM in an `EPBK` container,
+  with strict JSON validation on import; credentials are excluded from backups
+- **Themes**: built-in silver, black, and OLED black, plus importable `.ep-theme` packages, offline theme assets,
+  and per-theme rollback to the previous version
+- **Plugin platform**: separately installed APKs discovered and connected over AIDL, with bounded Parcelables,
+  explicit certificate approval in both directions, and enable/disable/uninstall control
+- **Optional NetEase Cloud Music plugin**: QR-code login, account catalog, search, playback resolution, lyrics, and
+  like state; daily recommendations, private radar, and song roam appear as read-only virtual playlists
+- **Music source switching** between the local library and a signed-in account, persisted across restarts
+- **Touch guard**: blocks direct LCD touches while keeping the wheel, keyboard, accessibility services, and media
+  controls usable, with an exception scoped to the current text-input session
+- **Lock-screen overlay** using `setShowWhenLocked` with a system-unlock gate for sensitive actions, plus an
+  optional full-screen mode that hides only the top system status bar
+- **Safe mode**: after two confirmed startup crashes during external plugin or theme loading, cloud services are
+  suspended and the built-in silver theme is used, while the local library keeps working
+- **Redacted diagnostic preview and export**
+
+## Notes
+
+- First run does not add tracks or start playback. Grant a folder through
+  `Settings > Local & storage > Local music folder` before anything is playable
+- Local scanning reads the root folder plus one level of subdirectories only; deeper trees are not traversed
+- The NetEase plugin has no launcher icon. The host opens its approval page through an explicit intent and
+  connects through the `MUSIC_PLUGIN` service intent
+- Per-track entitlements and the actual delivered audio quality are decided by the server, not by this app.
+  Requested quality is a preference, and the reported quality is always the value the server actually returned
+- The NetEase plugin declares no offline-download and no cloud-playlist-write capability. Entries for unsupported
+  capabilities are not shown rather than being faked
+- The lock-screen overlay is subject to Android background-start restrictions and ROM window policy; it is not
+  guaranteed to appear on every screen wake
+- Release builds are unsigned unless you supply a keystore. See
+  [Release Build and Signing](#release-build-and-signing)
+- The offline plugin market lives inside the host APK and installs through the normal Android package installer;
+  it does not auto-install or silently enable anything
+
+## Tech Stack
+
+- Kotlin 2.0.21, Java 17 target
+- UI: Jetpack Compose (BOM 2024.12.01) with Material 3 and `material-icons-extended`
+- Playback: Media3 1.5.1 (`media3-exoplayer`, `media3-session`, `media3-datasource-okhttp`, `media3-common`)
+- Storage: Room 2.6.1 through KSP, Proto DataStore via `protobuf-javalite` 4.29.2, `SimpleCache` for streams
+- Background work: WorkManager (`work-runtime-ktx`) for offline downloads
+- Networking: OkHttp 4.12.0 and Okio
+- Images and codes: Coil 2.7.0, ZXing 3.5.3 for QR login
+- Cryptography: Bouncy Castle (Argon2id) plus JCA AES-GCM, and the Android Keystore for account credentials
+- IPC: AIDL with `Parcelable` envelopes in `:plugin-contract`
+- Build: Android Gradle Plugin 8.7.3, Gradle Wrapper 8.9 (distribution SHA-256 pinned), version catalog in
+  `gradle/libs.versions.toml`
+
+## Development and Run
+
+### Requirements
+
+- JDK 17
+- Android SDK Platform 35 and Build Tools 35.0.0
+- `ANDROID_HOME` set, or `sdk.dir` in an untracked `local.properties`
+- An Android 14+ device with authorized ADB for the instrumentation suites
+
+Gradle 8.9 is pinned by the wrapper and its distribution checksum is verified, so no separate Gradle install is
+needed.
+
+### Build
 
 ```sh
 ./gradlew :app:assembleDebug :netease-plugin:assembleDebug
-./gradlew :core:test :data:testDebugUnitTest :playback:testDebugUnitTest :plugins:testDebugUnitTest :netease-plugin:testDebugUnitTest :app:testDebugUnitTest
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-# 网易云服务按需安装（可跳过）
-adb install -r netease-plugin/build/outputs/apk/debug/netease-plugin-debug.apk
 ```
 
-Gradle Wrapper 固定 8.9，并校验分发包的 SHA-256。主应用包名为 `app.easepod`，版本为 `0.1.0`。发布构建使用 `./gradlew :app:assembleRelease`；生成的未签名 APK 不能直接安装，签名由发行者提供，仓库不保存签名私钥。设备测试需要已授权 ADB 的 Android 14+ 设备，命令与夹具条件见验证索引。
+Add `:sample-plugin:assembleDebug` to also build the standalone sample service.
 
-## 模块
+### Tests
 
-| 模块 | 职责 |
+```sh
+./gradlew :core:test :data:testDebugUnitTest :playback:testDebugUnitTest \
+  :plugins:testDebugUnitTest :netease-plugin:testDebugUnitTest :app:testDebugUnitTest
+```
+
+Device instrumentation suites need a connected device and are run per class so each suite gets a fresh process:
+
+```sh
+./gradlew :app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=app.easepod.ui.DeviceShellTest
+./gradlew :playback:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=app.easepod.playback.PlaybackDeviceTest
+./gradlew :playback:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=app.easepod.playback.DownloadCoordinatorDeviceTest
+```
+
+The local-library device suite runs against the silent fixture in `verification/media`:
+
+```sh
+adb push verification/media /sdcard/Download/EasePod-QA
+./gradlew :app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=app.easepod.ui.LocalLibraryDeviceTest
+```
+
+Grant that `EasePod-QA` folder through the system picker and expect one root single plus two first-level albums
+(three silent WAV/FLAC/OGG tracks). Do not point these tests at a personal music folder.
+
+### Install
+
+```sh
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+# Optional cloud service, install only if you want it
+adb install -r netease-plugin/build/outputs/apk/debug/netease-plugin-debug.apk
+# Optional standalone sample service
+adb install -r sample-plugin/build/outputs/apk/debug/sample-plugin-debug.apk
+```
+
+### Release Build and Signing
+
+```sh
+./gradlew :app:assembleRelease
+```
+
+Without a keystore this produces `app/build/outputs/apk/release/app-release-unsigned.apk`, which cannot be
+installed directly. To produce a signable build, copy the tracked template and fill it in:
+
+```sh
+cp keystore.properties.example keystore.properties
+```
+
+```properties
+storeFile=/absolute/path/to/release.jks
+storePassword=your-store-password
+keyAlias=your-key-alias
+keyPassword=your-key-password
+```
+
+`keystore.properties` is gitignored and must never be committed. **No signing key is stored in this repository** —
+release signing belongs to whoever distributes the build.
+
+### Packaging a Delivery
+
+```sh
+./scripts/package-delivery.sh
+```
+
+This collects the APKs, the license, and a reproducible source archive into `dist/`, and writes `SHA256SUMS`.
+Verify with `sha256sum -c SHA256SUMS` from inside `dist/`. `dist/` is not tracked by git.
+
+## Modules
+
+| Module | Responsibility |
 |---|---|
-| `app` | Android 窗口、冻结路由、Compose LCD 与轮盘、系统流程 |
-| `core` | 音乐实体、队列、设置接口、轮盘几何 |
-| `data` | 单 SAF 根目录、Room 索引与歌单、设置、加密备份 |
-| `playback` | Media3 前台服务、真实队列、音频输出、流缓存与离线下载 |
-| `plugin-contract` | 有界 Parcelable 与 AIDL 协议、插件服务基类 |
-| `plugins` | 内置服务注册、独立 APK 发现、双向信任、连接管理、主题导入与回退 |
-| `netease-plugin` | 独立 APK 形式分发的网易云服务、扫码账号、目录与搜索、播放地址、歌词与喜欢状态 |
-| `sample-plugin` | 独立安装的契约示例服务，不随播放器预装 |
+| `app` | Android window, frozen routes, Compose LCD and wheel UI, system flows |
+| `core` | Music entities, queue, settings interfaces, wheel geometry (pure Kotlin/JVM) |
+| `data` | Single SAF root, Room index and playlists, settings, encrypted backup |
+| `playback` | Media3 foreground service, playback queue, audio output, stream cache, offline downloads |
+| `plugin-contract` | Bounded Parcelables, AIDL protocol, plugin service base class |
+| `plugins` | Built-in service registry, external APK discovery, mutual trust, connection management, theme import |
+| `netease-plugin` | Optional NetEase Cloud Music service shipped as a separate APK |
+| `sample-plugin` | Separately installed contract sample service, never bundled with the host |
 
-## 插件与恢复
+## Plugin Platform
 
-“设置 > 插件 > 安装插件 > 从文件安装”接收独立 APK 与 `.ep-theme` 主题包。独立 APK 插件通过单独进程的 AIDL 服务接入；安装器返回后重新核对包名、版本、插件标识与证书，批准证书并启用后才连接。服务端同时核验并批准 EasePod 的签名身份，包名本身不构成信任。
+External services are independently installed APKs reached through AIDL. After the installer returns, the host
+re-verifies package name, version, plugin identity, and certificate, and only then offers approval; the plugin side
+separately verifies and approves the host's signing identity, so a package name alone is not a trust decision.
+Nothing is connected until a certificate is explicitly approved and the plugin is enabled.
 
-网易云音乐 APK 安装后从“音乐 > 音乐服务 > 网易云音乐”进入。它没有桌面启动图标，由宿主通过显式授权 Intent 打开授权页，并通过 `MUSIC_PLUGIN` 服务 Intent 连接。它遵循独立插件的签名核对、批准、启用、停用和卸载流程；未安装时宿主仍可正常使用本地库。账号页提供扫码登录，凭据保存在本机 Android Keystore 加密文件中，不进入备份。歌曲权益与实际音质由服务端决定；当前支持喜欢状态，不声明离线下载和云端歌单编辑能力。
+Plugins declare capabilities, so entries that a service cannot serve are not displayed. Cloud write operations
+additionally require a valid private account, network access, and explicit confirmation; a timed-out write keeps a
+pending receipt and re-reads remote state instead of assuming success. Offline cloud mutations are never queued or
+replayed.
 
-登录成功后，该账号自动成为当前音乐来源。正常音乐菜单的 Cover Flow、歌单、歌曲、专辑、艺人、搜索与主菜单随机播放直接读取该账号，无需再次进入插件页。网易云 Cover Flow 展示账号歌单，歌曲为喜欢的音乐，专辑和艺人为收藏列表，并提供每日推荐；个人流派目录暂不支持。通过“音乐 > 音乐来源”切回本地或其他已选账号，选择随重启保存；退出账号、账号失效、停用插件或安全模式会回到本地。旧版已有选中云账号会自动迁移，明确选过本地后不会重新自动切换。
+The bundled sample service is the reference implementation:
 
-后续插件通过 [主目录契约](plugin-contract/HOME-CATALOG.md) 接入相同入口；未声明 `catalog.home` 的旧插件使用原浏览根目录，不要求采用网易云专用端点。主音乐来源验收见 [验证记录](verification/music-source.md)。
+- [sample-plugin/README.md](sample-plugin/README.md) — build, install, and two-way approval steps
+- [plugin-contract/HOME-CATALOG.md](plugin-contract/HOME-CATALOG.md) — the main-menu catalog contract
+- [plugin-contract/MEDIA-SOURCES.md](plugin-contract/MEDIA-SOURCES.md) — media and artwork resolution rules
+- [plugin-contract/QUALITY.md](plugin-contract/QUALITY.md) — optional quality negotiation
+- [plugin-contract/CLOUD-LIBRARY.md](plugin-contract/CLOUD-LIBRARY.md) — cloud favorites and playlist writes
+- [plugins/THEME-PACKAGE.md](plugins/THEME-PACKAGE.md) — `.ep-theme` package format and fallback rules
+- [netease-plugin/PROTOCOL_SOURCES.md](netease-plugin/PROTOCOL_SOURCES.md) — protocol provenance, implementation
+  scope, and the disclaimer and terms-of-service risk statement for the NetEase plugin
 
-独立 [sample-plugin](sample-plugin/README.md) 使用三个公共 SoundHelix 样例验证浏览、搜索、详情与 HTTPS 播放，不随宿主安装。它可在手机插件详情或系统设置中独立卸载，卸载后可从交付包重新安装。主题包格式和回退规则见 [THEME-PACKAGE.md](plugins/THEME-PACKAGE.md)，可选音质协商见 [QUALITY.md](plugin-contract/QUALITY.md)。远程签名目录的校验组件已提供，但本工程未配置在线目录地址或官方发布服务；当前安装入口使用本地文件。
+No online plugin index or official publishing service is configured. The market ships inside the host APK and the
+installation entry point works from local files.
 
-通用云端收藏与歌单写入协议见 [CLOUD-LIBRARY.md](plugin-contract/CLOUD-LIBRARY.md)。写操作需要有效私有账号、联网和明确确认；超时保留待确认收据，先读回远端状态。应用不会排队发送离线云操作，也不会在重连后重放写入。示例服务未声明云端写入能力，这些入口只在实际支持的服务上显示。
+## Settings
 
-安全模式暂停云端音乐服务并使用内置银色主题，保留本地库与宿主播放。除手动开启外，连续两次确认在外部插件或主题启动阶段发生的宿主崩溃会使下次启动持久化开启安全模式。系统回收、强制停止与插件自身进程死亡不作为宿主启动崩溃累计。首屏与启动资源稳定后清除计数；纯后台启动也会结束观察窗口，避免把后续后台崩溃误计为启动失败。
+The settings tree is fixed by the frozen baseline:
 
-## 许可
+- `Music`: Cover Flow, playlists, artists, albums, songs, genres, search, recently played, and the music source
+- `Settings > Themes`: built-in themes, imported themes, and rollback to the previous version
+- `Settings > Wheel`: rotation sensitivity, haptics, and click sound
+- `Settings > Playback`: shuffle, repeat, volume, network quality preference, actual quality, audio output
+- `Settings > Sleep timer`: off / 15 / 30 / 60 minutes
+- `Settings > Lock-screen overlay`, `Full screen`, `Touch guard`: all default to off
+- `Settings > Plugins`: built-in services, installed plugins, install entry point, and safe mode
+- `Settings > Local & storage`: music folder, rescan, folder permission state, cache limit, cache clearing, and
+  backup export/import
+- `Settings > Offline music`: Wi-Fi-only downloads and the download list
+- `Settings > About`: open-source and third-party licenses, reference credits, the privacy statement, and redacted
+  diagnostics
 
-EasePod 原创代码采用 AGPL-3.0-only，全文见 [LICENSE](LICENSE)。发行时同时提供对应源代码、构建材料和第三方许可；应用“关于”包含许可、依赖清单和参考致谢。仓库未预设对外源码托管地址，发行者需提供实际对应源码获取方式。正式应用不包含参考项目 Classipod 的代码、字体或位图。
+The in-app privacy statement reads: the music folder is only read within the scope you grant; account credentials
+are held by the music service plugin that owns them; there is no default telemetry and no upload of local music or
+search history; backups are passphrase-encrypted and exclude account credentials.
+
+## Controls
+
+Wheel:
+
+- Rotate: move focus
+- Center: confirm; on the now-playing page it cycles Normal → Seek → Volume → Lyrics
+- `MENU`: back
+- Left / Right: previous / next track
+- Down: play / pause
+
+Keyboard and remote controls follow the same routing. Sensitive actions (installing a plugin, exporting data,
+removing a folder, cloud writes) require a system unlock and then an explicit confirmation.
+
+## Verification
+
+This repository keeps its acceptance evidence under version control instead of only asserting results:
+
+- [verification/README.md](verification/README.md) — environment, reproduction commands, and coverage boundaries
+- [data/VERIFICATION.md](data/VERIFICATION.md), [playback/VERIFICATION.md](playback/VERIFICATION.md),
+  [plugins/VERIFICATION.md](plugins/VERIFICATION.md) — per-module acceptance records
+- [verification/netease.md](verification/netease.md), [verification/music-source.md](verification/music-source.md),
+  [verification/window-settings.md](verification/window-settings.md),
+  [verification/plugin-install-delete.md](verification/plugin-install-delete.md) — feature-level acceptance records
+- Fixed unit-test result XML and raw build/device logs are archived next to those documents, including the runs
+  that failed before a fix
+
+Device captures (screenshots and ADB dumps) are large and device-specific, so they are kept only in the local
+working tree and are not distributed with the repository.
+
+## Project Status and Known Limitations
+
+- **Internationalization is not done.** All user-visible strings are currently hardcoded Chinese literals in
+  Kotlin; there is no `res/values/strings.xml` and no locale variants. Adding string resources and at least one
+  translated locale is the largest outstanding task before the app is usable for non-Chinese readers
+- Release builds are unsigned unless `keystore.properties` is supplied
+- Device acceptance is not exhaustive. Bluetooth playback, headset removal, audio-focus interruption, battery
+  restrictions, process death, device reboot, and ROM-specific lock-screen behavior still need per-device
+  verification
+- For the NetEase plugin, real cloud writes, full track entitlements, and every quality tier are **not** accepted;
+  the verified paths were read-only tests on a real account
+- Download behavior under real network loss and recovery, and WorkManager requeue under device battery/network
+  constraints, still need device validation
+- There is no CI workflow, no online plugin index, and no release pipeline configured in this repository yet
+- See [DEVELOPMENT.md](DEVELOPMENT.md) for the current acceptance queue and stage-by-stage status
+
+## Related Projects
+
+EasePod is an independent implementation. Its interface was designed with reference to:
+
+- [Classipod](https://github.com/adeeteya/Classipod) — iPod-style interface structure and wheel interaction
+  reference (BSD-4-Clause; no code, fonts, or bitmaps are used)
+- [CNMPlayer](https://github.com/professor-lee/CNMPlayer) — reference for the cloud service adaptation flow
+- [SoundHelix](https://www.soundhelix.com/) — public sample audio used only by the standalone sample plugin
+
+In-app attributions are bundled at `app/src/main/assets/THIRD-PARTY.txt`, with full license texts under
+`app/src/main/assets/licenses/`.
+
+## License
+
+EasePod original code and resources are licensed under [AGPL-3.0-only](LICENSE). The full text is also bundled in
+the APK at `app/src/main/assets/LICENSE`.
+
+Third-party components and full license texts are listed in [app/src/main/assets/THIRD-PARTY.txt](app/src/main/assets/THIRD-PARTY.txt);
+a runtime dependency inventory is generated into `DEPENDENCIES.txt` at build time from
+`releaseRuntimeClasspath`. The NetEase plugin additionally carries the upstream license text it was verified
+against at [netease-plugin/licenses/WTFPL.txt](netease-plugin/licenses/WTFPL.txt).
+
+Distributors of an AGPL-covered build must provide the corresponding source, build materials, and third-party
+notices, and must state how to obtain the corresponding source. This repository does not predefine an external
+source host, so the distributor supplies that address. See [DELIVERY.md](DELIVERY.md) for the delivery layout.
+
+The NetEase plugin is unofficial and unaffiliated with NetEase Cloud Music; using it may violate the service terms
+and risks account restrictions. Read the disclaimer in
+[netease-plugin/PROTOCOL_SOURCES.md](netease-plugin/PROTOCOL_SOURCES.md) before installing it.
+
+---
+## Star History
+
+[![Star History Chart](https://api.star-history.com/image?repos=professor-lee/EasePod&type=date&legend=top-left)](https://www.star-history.com/?repos=professor-lee%2FEasePod&type=date&legend=top-left)

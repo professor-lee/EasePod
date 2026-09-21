@@ -1,4 +1,4 @@
-plugins { id("com.android.application"); kotlin("android") }
+plugins { alias(libs.plugins.android.application); alias(libs.plugins.kotlin.android) }
 android {
     namespace = "app.easepod.netease"
     compileSdk = 35
@@ -15,12 +15,12 @@ android {
 }
 dependencies {
     implementation(project(":plugin-contract"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.json:json:20240303")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
-    testImplementation("com.squareup.okhttp3:okhttp-tls:4.12.0")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.okhttp)
+    testImplementation(libs.junit)
+    testImplementation(libs.json)
+    testImplementation(libs.okhttp.mockwebserver)
+    testImplementation(libs.okhttp.tls)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit)
 }

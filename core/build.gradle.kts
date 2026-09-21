@@ -1,8 +1,8 @@
-plugins { kotlin("jvm") }
+plugins { alias(libs.plugins.kotlin.jvm) }
 kotlin { jvmToolchain(17) }
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    testImplementation(kotlin("test"))
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
 tasks.test { useJUnitPlatform() }

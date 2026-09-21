@@ -1,37 +1,34 @@
 # 网易云协议来源与实现范围
 
-本模块为 EasePod 新编写的 Kotlin 实现，通过 Android/JVM JCA、OkHttp 和结构化 JSON 直接调用服务端。没有链接 Rust SDK，也没有复制 CNMPlayer 播放器本体的 AGPL 代码。协议字段和加密格式通过工作区内的 `参考文件/CNMPlayer/ncm-api-rs/` 静态研究获得；这不是官方开放 API SDK，也没有获得网易云音乐的官方支持承诺。
+本模块为 EasePod 新编写的 Kotlin 实现，通过 Android/JVM JCA、OkHttp 和结构化 JSON 直接调用服务端。没有链接 Rust SDK，也没有复制任何播放器本体的 AGPL 代码。协议字段与加密格式通过对上游开源实现的静态研究获得；这不是官方开放 API SDK，也没有获得网易云音乐的官方支持承诺。
 
-## 本地参考来源
+## 协议来源与许可核验
 
-参考快照的 [`Cargo.toml`](../../参考文件/CNMPlayer/ncm-api-rs/Cargo.toml) 声明 crate `ncm-api`、版本 `0.1.0`、许可证 `WTFPL`，上游地址 <https://github.com/imsyy/ncm-api-rs> 现重定向至 <https://github.com/SPlayer-Dev/ncm-api-rs>。CNMPlayer 的 [`THIRD_PARTY_NOTICES.md`](../../参考文件/CNMPlayer/THIRD_PARTY_NOTICES.md) 将该目录列为原样复制的第三方代码，声明 WTFPL v2，并附完整许可文本。
+协议研究的依据是上游开源项目 [`ncm-api-rs`](https://github.com/SPlayer-Dev/ncm-api-rs)（原地址 <https://github.com/imsyy/ncm-api-rs> 现重定向至该仓库），其 `Cargo.toml` 声明 crate `ncm-api`、版本 `0.1.0`、许可证 `WTFPL`。
 
-2026-09-08 已通过 GitHub API 联网核验固定上游提交 [`133b65bfe482e41ebccf018870d3fce07bf58eb3`](https://github.com/SPlayer-Dev/ncm-api-rs/commit/133b65bfe482e41ebccf018870d3fce07bf58eb3) 的 [`LICENSE`](https://github.com/SPlayer-Dev/ncm-api-rs/blob/133b65bfe482e41ebccf018870d3fce07bf58eb3/LICENSE)：内容为 WTFPL v2，Git blob SHA-1 为 `5c93f45654687732c6b9b568186deb766f78a81c`。相同原文已随本模块附于 [`licenses/WTFPL.txt`](licenses/WTFPL.txt)。该文件补充的是已核验上游提交的许可材料，没有改动本地参考快照。
+本模块不包含该项目或其他上游项目的任何代码、二进制或源码快照，仅依据公开的协议描述用 Kotlin 重新实现。许可方面已做如下核验：
 
-本地快照仍缺失第三方说明所指向的 `ncm-api-rs/LICENSE`，且 `crypto.rs` 和 `request.rs` 的内容与上述固定提交不一致。本次进一步检查 GitHub 默认分支中这两个路径返回的全部相关提交：`40de3fc422bf72c58a74e86896223a98e096d011`、`9e393a862393345763b201655cfac7728dd4c9e4`、`c2685be88676516e87b27749c1845317936e8e44`、`df575364ed7e3813aed136ad2a4dfaaae67b60de`。这些提交的对应 Git tree 中均没有与本地两文件相同的 blob。因此，当日上游 WTFPL v2 声明已得到确认，但本地快照的精确上游版本仍未确定，第三方说明中的“原样复制”不能视为已经核实。此检查不覆盖其他分支、已删除历史或 CNMPlayer 自身的导入后修改。
+- 2026-09-08 通过 GitHub API 联网核验固定提交 [`133b65bfe482e41ebccf018870d3fce07bf58eb3`](https://github.com/SPlayer-Dev/ncm-api-rs/commit/133b65bfe482e41ebccf018870d3fce07bf58eb3) 的 [`LICENSE`](https://github.com/SPlayer-Dev/ncm-api-rs/blob/133b65bfe482e41ebccf018870d3fce07bf58eb3/LICENSE)：内容为 WTFPL v2，Git blob SHA-1 为 `5c93f45654687732c6b9b568186deb766f78a81c`。
+- 该许可原文已随本模块附于 [`licenses/WTFPL.txt`](licenses/WTFPL.txt)，可直接查阅，无需访问上游。
 
-| 本地参考文件 | Git blob SHA-1 | 文件 SHA-256 |
-|---|---|---|
-| `src/crypto.rs` | `3fd6e143c076e36c3f6d2e11bfbd8efa9b16d212` | `3f2acf36604857de98f7422af95d16eed7ec891aff1273ff09bc253439ef4300` |
-| `src/request.rs` | `ed03d06e138e92ee0d7a79ca63ee6fa292ac967a` | `d41a7cfb4d99dae05589f04cca75fbe33fb5b4015cab4fea29316b9d79f4ae31` |
-| `Cargo.toml` | 未记录 | `643cca913ec03da997f1245e6ed74ff9e07c62d91bdb3cd252ca372548616618` |
+核验边界：上述结论只针对该固定提交的许可声明，不构成对上游全部历史版权来源的确认。本模块实现与任何单一上游提交都不构成逐行对应关系；上游是活跃演进的项目，文件内容可能已经变化。此记录不改授第三方代码的许可，EasePod 原创 Kotlin 实现按项目 [`LICENSE`](../LICENSE) 的 AGPL-3.0-only 声明处理。
 
-以上文件路径相对 `参考文件/CNMPlayer/ncm-api-rs/`；外层 `THIRD_PARTY_NOTICES.md` 的 SHA-256 为 `0334a3c6720bd7a0b338f0e5f1ecaf6bbd8ae0a1562c79ccabc1145ed32a06cd`。这些校验值用于固定实际研究材料，不表示 Rust 实现被打包进插件，也不构成对全部历史版权来源的确认。
+## 实现对照
 
-参考仓库外层 [`LICENSE`](../../参考文件/CNMPlayer/LICENSE) 是 AGPL v3，不能代替子项目自身的许可核验。EasePod 原创 Kotlin 实现仍按根目录 [`LICENSES.md`](../../LICENSES.md) 和项目 [`LICENSE`](../LICENSE) 的 AGPL-3.0-only 声明处理；此记录不改授第三方代码的许可。
+下表给出本模块行为与上游项目内对应文件的对照，便于核对协议来源。文件名相对上游仓库根目录，`src/` 下的路径为该项目的模块布局。
 
-| 本模块行为 | 本地参考文件（相对 `参考文件/CNMPlayer/ncm-api-rs/src/`） |
+| 本模块行为 | 上游对应文件 |
 |---|---|
-| WEAPI 双层 AES-CBC、反转随机密钥的无填充 RSA；EAPI MD5 签名和 AES-ECB | `crypto.rs` |
-| `/api/` 路径签名、WEAPI/EAPI URL、表单编码、请求 header、会话 cookie | `request.rs`、`util/config.rs`、`util/cookie.rs` |
-| 二维码登录与会话状态 | `api/login_qr_key.rs`、`api/login_qr_check.rs`、`api/login_status.rs` |
-| 公开推荐歌单、我的歌单、喜欢列表、每日推荐 | `api/personalized.rs`、`api/user_playlist.rs`、`api/likelist.rs`、`api/recommend_songs.rs` |
-| 主界面的收藏专辑、收藏歌手 | `api/album_sublist.rs`、`api/artist_sublist.rs` |
-| 歌曲、专辑、歌手、歌单搜索 | `api/cloudsearch.rs` |
-| 歌单完整 trackIds 和按页批量歌曲详情 | `api/playlist_detail.rs`、`api/playlist_track_all.rs`、`api/song_detail.rs` |
-| 专辑详情、歌手歌曲列表 | `api/album.rs`、`api/artist_songs.rs` |
-| 播放地址、网易云音质参数 | `api/song_url_v1.rs` |
-| 原文和翻译歌词 | `api/lyric.rs` |
+| WEAPI 双层 AES-CBC、反转随机密钥的无填充 RSA；EAPI MD5 签名和 AES-ECB | `src/crypto.rs` |
+| `/api/` 路径签名、WEAPI/EAPI URL、表单编码、请求 header、会话 cookie | `src/request.rs`、`src/util/config.rs`、`src/util/cookie.rs` |
+| 二维码登录与会话状态 | `src/api/login_qr_key.rs`、`src/api/login_qr_check.rs`、`src/api/login_status.rs` |
+| 公开推荐歌单、我的歌单、喜欢列表、每日推荐 | `src/api/personalized.rs`、`src/api/user_playlist.rs`、`src/api/likelist.rs`、`src/api/recommend_songs.rs` |
+| 主界面的收藏专辑、收藏歌手 | `src/api/album_sublist.rs`、`src/api/artist_sublist.rs` |
+| 歌曲、专辑、歌手、歌单搜索 | `src/api/cloudsearch.rs` |
+| 歌单完整 trackIds 和按页批量歌曲详情 | `src/api/playlist_detail.rs`、`src/api/playlist_track_all.rs`、`src/api/song_detail.rs` |
+| 专辑详情、歌手歌曲列表 | `src/api/album.rs`、`src/api/artist_songs.rs` |
+| 播放地址、网易云音质参数 | `src/api/song_url_v1.rs` |
+| 原文和翻译歌词 | `src/api/lyric.rs` |
 
 ## 适配约束
 
@@ -44,3 +41,14 @@
 - 默认 `NO_STORE`，不声明离线下载授权或完整内容 SHA-256。若上游给出格式正确的 MD5，使用 MD5 和实际音质作为媒体表示版本；这不是额外的完整性承诺或缓存授权。合法可播放地址不等于获得离线保存许可。
 
 本地夹具覆盖端点参数、目录映射、歌曲分页、账号隔离游标、音质降级、试听、媒体地址限制、歌词翻译和业务错误。夹具测试不证明真实账号、歌曲或当前服务端可用；服务端变化、账号权益、地区和 CDN 调度仍可能影响实际结果。
+
+## 免责声明与使用风险
+
+- 本项目与网易云音乐及其运营方无任何关联，未获得官方授权或支持；本模块调用的服务端接口不是官方开放 API，其可用性与行为由服务端决定，可能随时变化或被限制。
+- 协议字段与加密格式通过研究第三方开源实现静态分析获得（见上文“协议来源与许可核验”）。`NeteaseCrypto.kt` 中的 `EAPI_KEY`、`PRESET_KEY` 与 RSA 公钥是公开的协议常量，仅用于构造请求签名，不是账号凭据，也不是私钥。
+- 使用本模块连接网易云音乐服务可能违反其服务条款，并可能导致账号被限制或封禁；由此产生的账号与数据风险由使用者自行承担。
+- 本模块不绕过 DRM、不破解付费内容、不托管任何未经授权的 API 服务；不声明离线下载授权，试听范围、账号权益与实际音质均由服务端决定。
+- 本模块不提供任何音乐内容，只在本机客户端转发请求；所有音乐内容及其权利归各自权利人所有。
+- 登录凭据（Cookie）仅保存在本机 Android Keystore 加密的账号文件中（AES-GCM，位于 `noBackupFilesDir`），不参与系统备份，不上传任何服务器。
+- 建议仅在个人自有账号上以只读方式使用本模块；不用于商业分发或对外提供服务。
+- 本文档及代码中出现的产品名称与商标归其各自权利人所有。

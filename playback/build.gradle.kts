@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -16,16 +16,16 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.media3:media3-exoplayer:1.5.1")
-    implementation("androidx.media3:media3-session:1.5.1")
-    implementation("androidx.media3:media3-database:1.5.1")
-    implementation("androidx.media3:media3-datasource-okhttp:1.5.1")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("androidx.work:work-runtime-ktx:2.9.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.work:work-testing:2.9.1")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.session)
+    implementation(libs.androidx.media3.database)
+    implementation(libs.androidx.media3.datasource.okhttp)
+    implementation(libs.okhttp)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.work.testing)
 }

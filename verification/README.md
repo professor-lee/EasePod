@@ -12,7 +12,7 @@
 - 本轮实际设备为 HiBreak，Android 14 / API 34，屏幕 824 × 1648。截图不是 HTML 预览。
 - 主 APK：`app/build/outputs/apk/debug/app-debug.apk`；独立网易云插件 APK：`netease-plugin/build/outputs/apk/debug/netease-plugin-debug.apk`；独立示例 APK：`sample-plugin/build/outputs/apk/debug/sample-plugin-debug.apk`。
 - 单测 HTML 报告：各模块的 `build/reports/tests/`；设备报告：各 Android 模块的 `build/reports/androidTests/connected/debug/`。
-- [home.png](device/home.png) 与 [coverflow.png](device/coverflow.png) 记录真实 SAF 授权和三首曲目索引后的首批设备画面。
+- `device/home.png` 与 `device/coverflow.png` 记录真实 SAF 授权和三首曲目索引后的首批设备画面。设备截图与 adb 转储体积大且随设备变化，仅保留在本地工作目录，不随仓库分发。
 
 ## 已完成设备批次
 
@@ -24,7 +24,7 @@
 | `DeviceShellTest` | 6 / 6 通过 | 9.821 秒 |
 | Cover Flow 动画单例重跑 | 1 / 1 通过 | 2.253 秒 |
 
-[设备截图目录](device/verification/) 保存 43 张主路由、三种内置主题、本地播放/歌词/队列/歌单及 Cover Flow 画面。设备原来的 `animator_duration_scale=0` 会关闭动画；动画单例运行时临时设为 `1`，完成后已恢复为 `0`。[顺时针中间帧](device/verification/local-coverflow-clockwise-mid.png) 与 [逆时针中间帧](device/verification/local-coverflow-counterclockwise-mid.png) 经画面检查和像素差验证发生移动，没有把静止画面算作动画通过。
+`device/verification/` 保存 43 张主路由、三种内置主题、本地播放/歌词/队列/歌单及 Cover Flow 画面。设备原来的 `animator_duration_scale=0` 会关闭动画；动画单例运行时临时设为 `1`，完成后已恢复为 `0`。`device/verification/local-coverflow-clockwise-mid.png`（顺时针中间帧）与 `device/verification/local-coverflow-counterclockwise-mid.png`（逆时针中间帧）经画面检查和像素差验证发生移动，没有把静止画面算作动画通过。
 
 ## 复现命令
 

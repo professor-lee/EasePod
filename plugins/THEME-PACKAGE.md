@@ -1,6 +1,6 @@
 # EasePod Theme Package Schema
 
-An `.ep-theme` file is a ZIP archive containing `manifest.json`, `tokens.json`, and optional bitmap files beneath `assets/`. Theme packages contain no executable code. This schema implements the constrained theme slots in `docs/easepod-architecture/plugin-api-v2.md`, section 9.
+An `.ep-theme` file is a ZIP archive containing `manifest.json`, `tokens.json`, and optional bitmap files beneath `assets/`. Theme packages contain no executable code. This schema implements only the constrained set of theme slots the host exposes. A theme cannot change routing, dangerous-action confirmation, or input semantics.
 
 ## Manifest
 
@@ -81,9 +81,10 @@ Installation validates an isolated staging directory, moves it to a new immutabl
 `ThemeArchiveTest` covers archive limits and path validation, readable fallback tokens, accepted typography, asset slot validation, published resource paths, failed updates, version rollback, and rejection of a corrupted previous resource.
 
 ```sh
-JAVA_HOME=/usr/lib/jvm/java-17-openjdk ANDROID_HOME=<ANDROID_SDK> \
-  .tools/gradle-8.9/bin/gradle :plugins:testDebugUnitTest \
+./gradlew :plugins:testDebugUnitTest \
   --max-workers=2 -Pkotlin.incremental=false
 ```
+
+在仓库根目录执行，需要 JDK 17（Gradle 8.9 不支持更高版本）与 Android SDK Platform 35。
 
 The four typography/asset additions await execution in the next unified build. UI rendering of these tokens is verified separately in the application suite.
