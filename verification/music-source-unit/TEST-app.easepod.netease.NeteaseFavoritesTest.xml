@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseFavoritesTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:16" hostname="localhost" time="0.098">
+  <properties/>
+  <testcase name="concurrentCommandsForTheSameDesiredStateSendOnlyOneWrite" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.028"/>
+  <testcase name="writeIsSentOnceAndOnlyConfirmedByReadback" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.006"/>
+  <testcase name="desiredStateIsIdempotentForBothFavoriteAndUnfavorite" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.006"/>
+  <testcase name="invalidCommandsAndPublicAccountsNeverReachTheApi" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.006"/>
+  <testcase name="mismatchingOrFailedReadbackProducesUnknownWithoutASecondWrite" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.007"/>
+  <testcase name="failureBeforeWriteDoesNotSendAnyMutation" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.011"/>
+  <testcase name="accountExitAfterWriteReturnsUnknownAndDoesNotReadOrWriteAgain" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.006"/>
+  <testcase name="cancellationDuringWritePropagatesWithoutRetry" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.005"/>
+  <testcase name="lostWriteResponseProducesUnknownWithoutRetrying" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.004"/>
+  <testcase name="accountExitBeforeWriteStopsTheMutation" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.007"/>
+  <testcase name="readReturnsProviderStateWithoutWriting" classname="app.easepod.netease.NeteaseFavoritesTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

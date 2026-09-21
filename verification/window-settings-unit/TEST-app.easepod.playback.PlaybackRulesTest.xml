@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.playback.PlaybackRulesTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-08T12:08:44" hostname="localhost" time="0.743">
+  <properties/>
+  <testcase name="queueMovesCannotEscapeBoundsOrLoseAnEntry" classname="app.easepod.playback.PlaybackRulesTest" time="0.087"/>
+  <testcase name="offlinePermissionExpiresAtDeadline" classname="app.easepod.playback.PlaybackRulesTest" time="0.001"/>
+  <testcase name="shuffleRetainsHistoryAndCurrentOccurrence" classname="app.easepod.playback.PlaybackRulesTest" time="0.017"/>
+  <testcase name="streamCacheIdentityTracksEncodingAndRevisionWithoutSignedUrls" classname="app.easepod.playback.PlaybackRulesTest" time="0.102"/>
+  <testcase name="duplicateSongsAreMovedAndRestoredByEntryIdentity" classname="app.easepod.playback.PlaybackRulesTest" time="0.001"/>
+  <testcase name="mediaNetworkCannotResolveToLocalOrReservedAddresses" classname="app.easepod.playback.PlaybackRulesTest" time="0.503"/>
+  <testcase name="mediaDomainsAreExactAndRejectUndeclaredRedirectHosts" classname="app.easepod.playback.PlaybackRulesTest" time="0.003"/>
+  <testcase name="remoteSourceRejectsUnsafeSchemesCredentialsAndHeaders" classname="app.easepod.playback.PlaybackRulesTest" time="0.005"/>
+  <testcase name="stableCacheKeySeparatesAccountsAndServices" classname="app.easepod.playback.PlaybackRulesTest" time="0.012"/>
+  <testcase name="streamIdentityCannotCollideThroughFieldSeparators" classname="app.easepod.playback.PlaybackRulesTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

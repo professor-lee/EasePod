@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="app.easepod.playback.PlaybackDeviceTest" tests="6" failures="0" errors="0" skipped="0" time="5.08" timestamp="2026-09-08T09:44:37" hostname="localhost">
+  <properties>
+    <property name="device" value="HiBreak - 14" />
+    <property name="flavor" value="" />
+    <property name="project" value=":playback" />
+  </properties>
+  <testcase name="disablingSourceCancelsPendingResolutionAndRetainsQueue" classname="app.easepod.playback.PlaybackDeviceTest" time="0.155" />
+  <testcase name="sleepUsesMonotonicDeadlineAndFiresOnce" classname="app.easepod.playback.PlaybackDeviceTest" time="0.836" />
+  <testcase name="pauseDuringQueueSaveCancelsPendingPlaybackIntent" classname="app.easepod.playback.PlaybackDeviceTest" time="0.812" />
+  <testcase name="wavDecodesAndQueueEditsPreserveCurrentOccurrenceAndPosition" classname="app.easepod.playback.PlaybackDeviceTest" time="0.831" />
+  <testcase name="checkpointRestoresPositionWithoutStartingAudio" classname="app.easepod.playback.PlaybackDeviceTest" time="0.214" />
+  <testcase name="platformStopCancelsSleepAndRetainsPlaybackPosition" classname="app.easepod.playback.PlaybackDeviceTest" time="0.621" />
+</testsuite>

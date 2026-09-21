@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.playback.PlaybackRulesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-08T09:42:44" hostname="localhost" time="2.689">
+  <properties/>
+  <testcase name="queueMovesCannotEscapeBoundsOrLoseAnEntry" classname="app.easepod.playback.PlaybackRulesTest" time="0.258"/>
+  <testcase name="offlinePermissionExpiresAtDeadline" classname="app.easepod.playback.PlaybackRulesTest" time="0.005"/>
+  <testcase name="shuffleRetainsHistoryAndCurrentOccurrence" classname="app.easepod.playback.PlaybackRulesTest" time="0.081"/>
+  <testcase name="duplicateSongsAreMovedAndRestoredByEntryIdentity" classname="app.easepod.playback.PlaybackRulesTest" time="0.002"/>
+  <testcase name="mediaNetworkCannotResolveToLocalOrReservedAddresses" classname="app.easepod.playback.PlaybackRulesTest" time="2.172"/>
+  <testcase name="mediaDomainsAreExactAndRejectUndeclaredRedirectHosts" classname="app.easepod.playback.PlaybackRulesTest" time="0.015"/>
+  <testcase name="remoteSourceRejectsUnsafeSchemesCredentialsAndHeaders" classname="app.easepod.playback.PlaybackRulesTest" time="0.035"/>
+  <testcase name="stableCacheKeySeparatesAccountsAndServices" classname="app.easepod.playback.PlaybackRulesTest" time="0.103"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

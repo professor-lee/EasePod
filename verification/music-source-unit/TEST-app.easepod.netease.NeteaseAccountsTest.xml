@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseAccountsTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:14" hostname="localhost" time="0.994">
+  <properties/>
+  <testcase name="failedRemoteSignOutStillRemovesLocalCredentialsAndPrivateAccess" classname="app.easepod.netease.NeteaseAccountsTest" time="0.527"/>
+  <testcase name="cancellingTheRequestRejectsEvenANonCooperativeLateVerification" classname="app.easepod.netease.NeteaseAccountsTest" time="0.305"/>
+  <testcase name="closingAccountsPreventsAnInFlightBeginFromPublishingANewSession" classname="app.easepod.netease.NeteaseAccountsTest" time="0.01"/>
+  <testcase name="pollingIsThrottledAndConcurrentPollsDoNotIssueDuplicateRequests" classname="app.easepod.netease.NeteaseAccountsTest" time="0.023"/>
+  <testcase name="successfulQrCodeWithoutAMatchingVerifiedIdentityOrLoginCookieDoesNotSave" classname="app.easepod.netease.NeteaseAccountsTest" time="0.015"/>
+  <testcase name="refreshingQrInvalidatesThePreviousSessionWithoutCancellingOtherOwners" classname="app.easepod.netease.NeteaseAccountsTest" time="0.005"/>
+  <testcase name="lateAccountVerificationAfterSignOutDoesNotRestoreTheAccount" classname="app.easepod.netease.NeteaseAccountsTest" time="0.009"/>
+  <testcase name="anotherConnectionCannotPollOrCancelAnOwnersSession" classname="app.easepod.netease.NeteaseAccountsTest" time="0.005"/>
+  <testcase name="cancellingWhileAccountVerificationIsInFlightCannotPublishCredentials" classname="app.easepod.netease.NeteaseAccountsTest" time="0.011"/>
+  <testcase name="failedCredentialSaveDoesNotInstallAnAccountAndCorruptStoreNeedsExplicitNewLogin" classname="app.easepod.netease.NeteaseAccountsTest" time="0.01"/>
+  <testcase name="accountReadsRejectIdentityChangesAndPersistValidNamesAndCookieRotation" classname="app.easepod.netease.NeteaseAccountsTest" time="0.006"/>
+  <testcase name="serviceReportedExpiryDiscardsSessionAndLimitsConcurrentOwners" classname="app.easepod.netease.NeteaseAccountsTest" time="0.018"/>
+  <testcase name="anOlderBeginCannotReplaceTheLatestQrForTheSameOwner" classname="app.easepod.netease.NeteaseAccountsTest" time="0.011"/>
+  <testcase name="expiryBeforePollingAvoidsTheNetworkAndExpiryDuringVerificationAvoidsSaving" classname="app.easepod.netease.NeteaseAccountsTest" time="0.008"/>
+  <testcase name="qrCredentialsAreSavedOnlyAfterAccountVerificationAndSurviveRecreation" classname="app.easepod.netease.NeteaseAccountsTest" time="0.008"/>
+  <testcase name="signedOutAccountCannotBeRevivedByALateReadOrRotatedCookie" classname="app.easepod.netease.NeteaseAccountsTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

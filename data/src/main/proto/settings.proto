@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "app.easepod.data.proto";
+option java_multiple_files = true;
+
+message SettingsProto {
+  int32 schema_version = 1;
+  string theme_id = 2;
+  bool lock_screen_overlay = 3;
+  bool touch_guard = 4;
+  bool haptics = 5;
+  bool click_sound = 6;
+  int32 wheel_sensitivity = 7;
+  bool large_text = 8;
+  bool reduced_motion = 9;
+  bool safe_mode = 10;
+  int32 cache_limit_mb = 11;
+  bool wifi_downloads_only = 12;
+  string network_quality = 13;
+  bool full_screen = 14;
+}

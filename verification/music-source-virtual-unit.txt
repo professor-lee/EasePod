@@ -1,0 +1,147 @@
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :data:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :playback:preBuild UP-TO-DATE
+> Task :plugins:preBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :playback:preDebugBuild UP-TO-DATE
+> Task :plugins:preDebugBuild UP-TO-DATE
+> Task :data:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:preBuild UP-TO-DATE
+> Task :plugin-contract:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:preDebugBuild UP-TO-DATE
+> Task :plugin-contract:preDebugBuild UP-TO-DATE
+> Task :playback:writeDebugAarMetadata UP-TO-DATE
+> Task :netease-plugin:writeDebugAarMetadata UP-TO-DATE
+> Task :plugins:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :plugin-contract:writeDebugAarMetadata UP-TO-DATE
+> Task :data:writeDebugAarMetadata UP-TO-DATE
+> Task :playback:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :plugins:generateDebugResValues UP-TO-DATE
+> Task :plugin-contract:generateDebugResValues UP-TO-DATE
+> Task :netease-plugin:generateDebugResValues UP-TO-DATE
+> Task :playback:generateDebugResources UP-TO-DATE
+> Task :data:generateDebugResValues UP-TO-DATE
+> Task :plugin-contract:generateDebugResources UP-TO-DATE
+> Task :netease-plugin:generateDebugResources UP-TO-DATE
+> Task :plugins:generateDebugResources UP-TO-DATE
+> Task :data:generateDebugResources UP-TO-DATE
+> Task :data:packageDebugResources UP-TO-DATE
+> Task :playback:packageDebugResources UP-TO-DATE
+> Task :netease-plugin:packageDebugResources UP-TO-DATE
+> Task :plugins:packageDebugResources UP-TO-DATE
+> Task :plugin-contract:packageDebugResources UP-TO-DATE
+> Task :data:extractDeepLinksDebug UP-TO-DATE
+> Task :playback:extractDeepLinksDebug UP-TO-DATE
+> Task :netease-plugin:extractDeepLinksDebug UP-TO-DATE
+> Task :plugin-contract:extractDeepLinksDebug UP-TO-DATE
+> Task :plugins:extractDeepLinksDebug UP-TO-DATE
+> Task :netease-plugin:processDebugManifest UP-TO-DATE
+> Task :playback:processDebugManifest UP-TO-DATE
+> Task :plugins:processDebugManifest UP-TO-DATE
+> Task :netease-plugin:compileDebugLibraryResources UP-TO-DATE
+> Task :playback:compileDebugLibraryResources UP-TO-DATE
+> Task :plugin-contract:processDebugManifest UP-TO-DATE
+> Task :plugins:compileDebugLibraryResources UP-TO-DATE
+> Task :data:processDebugManifest UP-TO-DATE
+> Task :plugin-contract:compileDebugLibraryResources UP-TO-DATE
+> Task :data:compileDebugLibraryResources UP-TO-DATE
+> Task :netease-plugin:parseDebugLocalResources UP-TO-DATE
+> Task :playback:parseDebugLocalResources UP-TO-DATE
+> Task :plugin-contract:parseDebugLocalResources UP-TO-DATE
+> Task :data:parseDebugLocalResources UP-TO-DATE
+> Task :plugins:parseDebugLocalResources UP-TO-DATE
+> Task :netease-plugin:generateDebugRFile UP-TO-DATE
+> Task :plugin-contract:generateDebugRFile UP-TO-DATE
+> Task :plugins:generateDebugRFile UP-TO-DATE
+> Task :data:generateDebugRFile UP-TO-DATE
+> Task :netease-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugins:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :data:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :playback:generateDebugRFile UP-TO-DATE
+> Task :playback:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :netease-plugin:javaPreCompileDebug UP-TO-DATE
+> Task :data:extractDebugProto UP-TO-DATE
+> Task :playback:javaPreCompileDebug UP-TO-DATE
+> Task :data:extractProto UP-TO-DATE
+> Task :netease-plugin:preDebugUnitTestBuild UP-TO-DATE
+> Task :plugin-contract:compileDebugAidl UP-TO-DATE
+> Task :plugin-contract:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :netease-plugin:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :netease-plugin:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :plugins:javaPreCompileDebug UP-TO-DATE
+> Task :data:javaPreCompileDebug UP-TO-DATE
+> Task :plugin-contract:javaPreCompileDebug UP-TO-DATE
+> Task :data:extractIncludeDebugProto UP-TO-DATE
+> Task :data:generateDebugProto UP-TO-DATE
+> Task :playback:compileDebugKotlin UP-TO-DATE
+> Task :playback:compileDebugJavaWithJavac NO-SOURCE
+> Task :playback:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :data:kspDebugKotlin UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :data:compileDebugKotlin UP-TO-DATE
+> Task :data:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :data:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :plugin-contract:compileDebugKotlin
+> Task :plugin-contract:compileDebugJavaWithJavac UP-TO-DATE
+> Task :plugin-contract:processDebugJavaRes UP-TO-DATE
+> Task :plugin-contract:bundleLibRuntimeToJarDebug
+> Task :plugin-contract:bundleLibCompileToJarDebug
+> Task :plugins:kspDebugKotlin
+> Task :plugins:compileDebugKotlin
+> Task :plugins:compileDebugJavaWithJavac UP-TO-DATE
+> Task :plugins:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :netease-plugin:compileDebugKotlin
+> Task :netease-plugin:compileDebugJavaWithJavac NO-SOURCE
+> Task :netease-plugin:bundleLibCompileToJarDebug
+> Task :netease-plugin:bundleLibRuntimeToJarDebug
+> Task :netease-plugin:processDebugJavaRes
+> Task :netease-plugin:compileDebugUnitTestKotlin
+> Task :netease-plugin:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :netease-plugin:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :netease-plugin:testDebugUnitTest
+
+NeteaseCatalogTest > homeCoverAndPlaylistPagesShareProviderDataButCannotShareCursors FAILED
+    java.lang.IllegalArgumentException at NeteaseCatalogTest.kt:58
+
+NeteaseCatalogTest > privatePlaylistsAndFavoritesUseVerifiedUserId FAILED
+    java.lang.IllegalArgumentException at NeteaseCatalogTest.kt:229
+
+67 tests completed, 2 failed
+
+> Task :netease-plugin:testDebugUnitTest FAILED
+> Task :app:compileDebugKotlin
+w: app/src/main/kotlin/app/easepod/ui/DeviceShell.kt:171:54 'val Icons.Filled.BatteryUnknown: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.BatteryUnknown.
+w: app/src/main/kotlin/app/easepod/ui/DeviceShell.kt:221:155 'val Icons.Filled.QueueMusic: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.QueueMusic.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':netease-plugin:testDebugUnitTest'.
+> There were failing tests. See the report at: netease-plugin/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 1m
+96 actionable tasks: 12 executed, 84 up-to-date

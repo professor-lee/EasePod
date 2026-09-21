@@ -1,0 +1,12 @@
+netease-plugin/src/main/kotlin/app/easepod/netease/NeteaseCrypto.kt:44: Warning: ECB encryption mode should not be used (was "AES/ECB/PKCS5Padding") [GetInstance]
+        val cipher = Cipher.getInstance("AES/ECB/PKCS5Padding")
+                                        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GetInstance":
+   Cipher#getInstance should not be called with ECB as the cipher mode or
+   without setting the cipher mode because the default mode on android is ECB,
+   which is insecure.
+
+   https://goo.gle/GetInstance
+
+0 errors, 1 warnings

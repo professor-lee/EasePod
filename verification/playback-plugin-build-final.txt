@@ -1,0 +1,143 @@
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:preBuild UP-TO-DATE
+> Task :plugin-contract:preDebugBuild UP-TO-DATE
+> Task :plugin-contract:compileDebugAidl UP-TO-DATE
+> Task :plugin-contract:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:generateDebugResValues UP-TO-DATE
+> Task :plugin-contract:generateDebugResources UP-TO-DATE
+> Task :plugin-contract:packageDebugResources UP-TO-DATE
+> Task :plugin-contract:parseDebugLocalResources UP-TO-DATE
+> Task :plugin-contract:generateDebugRFile UP-TO-DATE
+> Task :core:compileKotlin
+> Task :core:compileJava NO-SOURCE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar
+> Task :plugin-contract:javaPreCompileDebug UP-TO-DATE
+> Task :plugins:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugins:preBuild UP-TO-DATE
+> Task :plugins:preDebugBuild UP-TO-DATE
+> Task :plugins:generateDebugResValues UP-TO-DATE
+> Task :plugins:generateDebugResources UP-TO-DATE
+> Task :plugins:packageDebugResources UP-TO-DATE
+> Task :plugins:parseDebugLocalResources UP-TO-DATE
+> Task :plugins:generateDebugRFile UP-TO-DATE
+> Task :plugins:javaPreCompileDebug UP-TO-DATE
+> Task :plugin-contract:compileDebugLibraryResources UP-TO-DATE
+> Task :plugin-contract:writeDebugAarMetadata UP-TO-DATE
+> Task :plugins:preDebugUnitTestBuild UP-TO-DATE
+> Task :plugins:writeDebugAarMetadata UP-TO-DATE
+> Task :plugins:checkDebugUnitTestAarMetadata UP-TO-DATE
+> Task :plugins:compileDebugLibraryResources UP-TO-DATE
+> Task :plugins:generateDebugUnitTestResValues UP-TO-DATE
+> Task :plugins:mapDebugUnitTestSourceSetPaths UP-TO-DATE
+> Task :plugins:generateDebugUnitTestResources UP-TO-DATE
+> Task :plugins:mergeDebugUnitTestResources UP-TO-DATE
+> Task :plugin-contract:extractDeepLinksDebug UP-TO-DATE
+> Task :plugin-contract:processDebugManifest UP-TO-DATE
+> Task :plugins:extractDeepLinksDebug UP-TO-DATE
+> Task :plugins:processDebugManifest UP-TO-DATE
+> Task :plugins:processDebugUnitTestManifest UP-TO-DATE
+> Task :plugins:processDebugUnitTestResources UP-TO-DATE
+> Task :plugins:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :plugin-contract:mergeDebugShaders UP-TO-DATE
+> Task :plugin-contract:compileDebugShaders NO-SOURCE
+> Task :plugin-contract:generateDebugAssets UP-TO-DATE
+> Task :plugin-contract:packageDebugAssets UP-TO-DATE
+> Task :plugins:mergeDebugShaders UP-TO-DATE
+> Task :plugins:compileDebugShaders NO-SOURCE
+> Task :plugins:generateDebugAssets UP-TO-DATE
+> Task :plugins:mergeDebugAssets UP-TO-DATE
+> Task :plugins:generateDebugUnitTestAssets UP-TO-DATE
+> Task :plugins:packageDebugAssets UP-TO-DATE
+> Task :plugins:mergeDebugUnitTestAssets UP-TO-DATE
+> Task :plugins:packageDebugUnitTestForUnitTest UP-TO-DATE
+> Task :plugins:generateDebugUnitTestConfig UP-TO-DATE
+> Task :playback:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :playback:preBuild UP-TO-DATE
+> Task :playback:preDebugBuild UP-TO-DATE
+> Task :playback:generateDebugResValues UP-TO-DATE
+> Task :playback:generateDebugResources UP-TO-DATE
+> Task :playback:packageDebugResources UP-TO-DATE
+> Task :playback:parseDebugLocalResources UP-TO-DATE
+> Task :playback:generateDebugRFile UP-TO-DATE
+> Task :plugin-contract:compileDebugKotlin
+> Task :plugin-contract:compileDebugJavaWithJavac
+> Task :plugin-contract:bundleLibRuntimeToJarDebug
+> Task :plugin-contract:processDebugJavaRes UP-TO-DATE
+> Task :plugin-contract:bundleLibCompileToJarDebug
+> Task :plugins:kspDebugKotlin
+> Task :playback:compileDebugKotlin
+> Task :playback:javaPreCompileDebug UP-TO-DATE
+> Task :playback:compileDebugJavaWithJavac NO-SOURCE
+> Task :playback:bundleLibRuntimeToJarDebug
+> Task :playback:bundleLibCompileToJarDebug
+> Task :playback:preDebugUnitTestBuild UP-TO-DATE
+> Task :playback:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :playback:compileDebugUnitTestKotlin
+> Task :playback:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :playback:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :playback:processDebugJavaRes UP-TO-DATE
+> Task :playback:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :playback:testDebugUnitTest
+> Task :playback:preDebugAndroidTestBuild UP-TO-DATE
+> Task :playback:writeDebugAarMetadata UP-TO-DATE
+> Task :playback:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :playback:compileDebugLibraryResources UP-TO-DATE
+> Task :playback:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :playback:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :playback:generateDebugAndroidTestResources UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :playback:extractDeepLinksDebug UP-TO-DATE
+> Task :playback:processDebugManifest UP-TO-DATE
+> Task :playback:processDebugAndroidTestManifest UP-TO-DATE
+> Task :playback:processDebugAndroidTestResources UP-TO-DATE
+
+> Task :plugins:compileDebugKotlin
+w: plugins/src/main/kotlin/app/easepod/plugins/PluginManager.kt:459:30 'static field ACTION_INSTALL_PACKAGE: String' is deprecated. Deprecated in Java.
+
+> Task :plugins:compileDebugJavaWithJavac UP-TO-DATE
+> Task :plugins:bundleLibRuntimeToJarDebug
+> Task :plugins:bundleLibCompileToJarDebug
+> Task :playback:compileDebugAndroidTestKotlin
+> Task :plugins:processDebugJavaRes UP-TO-DATE
+> Task :playback:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :playback:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :playback:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :playback:compileDebugAndroidTestShaders NO-SOURCE
+> Task :playback:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :playback:mergeDebugShaders UP-TO-DATE
+> Task :playback:compileDebugShaders NO-SOURCE
+> Task :playback:generateDebugAssets UP-TO-DATE
+> Task :playback:packageDebugAssets UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :playback:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :plugins:kspDebugUnitTestKotlin
+> Task :plugins:compileDebugUnitTestKotlin
+> Task :plugins:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :plugins:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :playback:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :playback:dexBuilderDebugAndroidTest
+> Task :playback:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :playback:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestJavaResource
+> Task :playback:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :playback:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :playback:bundleLibRuntimeToDirDebug
+> Task :plugins:testDebugUnitTest
+> Task :playback:mergeLibDexDebugAndroidTest
+> Task :playback:mergeProjectDexDebugAndroidTest
+> Task :playback:mergeDebugJniLibFolders UP-TO-DATE
+> Task :playback:mergeDebugNativeLibs NO-SOURCE
+> Task :playback:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :playback:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :playback:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :playback:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :playback:packageDebugAndroidTest
+> Task :playback:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :playback:assembleDebugAndroidTest
+
+BUILD SUCCESSFUL in 2m 30s
+104 actionable tasks: 25 executed, 79 up-to-date

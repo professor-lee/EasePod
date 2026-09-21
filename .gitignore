@@ -1,0 +1,44 @@
+# Gradle
+.gradle/
+.kotlin/
+**/build/
+gradle-*-bin.zip
+gradle-*-all.zip
+
+# 本机工具链与配置（不随源码分发）
+local.properties
+.tools/
+
+# 签名与密钥：仓库不保存任何私钥，发行签名由发行者自行提供
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+signing.properties
+
+# IDE / 编辑器
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.vscode/
+*.swp
+*~
+
+# 平台杂项
+.DS_Store
+Thumbs.db
+captures/
+*.hprof
+
+# 构建产物与交付包（APK 由分发通道提供，不进源码历史）
+*.apk
+*.aab
+*.ap_
+*.dex
+dist/
+
+# 设备验证产物：截图与 adb 转储体积大且随设备变化，验收记录正文仍随源码提交
+verification/device/

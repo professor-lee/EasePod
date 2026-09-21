@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.BundledMusicPluginTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-08T15:58:56" hostname="localhost" time="0.043">
+  <properties/>
+  <testcase name="appUpdatesKeepDisabledStateSourceIdentityAndQuarantine" classname="app.easepod.plugins.BundledMusicPluginTest" time="0.026"/>
+  <testcase name="firstRegistrationIsEnabledWithAStableSourceIdentity" classname="app.easepod.plugins.BundledMusicPluginTest" time="0.002"/>
+  <testcase name="anExternalPluginCannotDonateItsSourceIdentityToABundledService" classname="app.easepod.plugins.BundledMusicPluginTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

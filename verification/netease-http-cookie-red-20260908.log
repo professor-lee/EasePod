@@ -1,0 +1,59 @@
+> Task :netease-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:preBuild UP-TO-DATE
+> Task :netease-plugin:preBuild UP-TO-DATE
+> Task :plugin-contract:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:generateDebugResValues UP-TO-DATE
+> Task :netease-plugin:generateDebugResources UP-TO-DATE
+> Task :netease-plugin:packageDebugResources UP-TO-DATE
+> Task :netease-plugin:parseDebugLocalResources UP-TO-DATE
+> Task :netease-plugin:generateDebugRFile UP-TO-DATE
+> Task :netease-plugin:javaPreCompileDebug UP-TO-DATE
+> Task :netease-plugin:preDebugUnitTestBuild UP-TO-DATE
+> Task :netease-plugin:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :plugin-contract:compileDebugAidl UP-TO-DATE
+> Task :plugin-contract:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:generateDebugResValues UP-TO-DATE
+> Task :plugin-contract:generateDebugResources UP-TO-DATE
+> Task :plugin-contract:packageDebugResources UP-TO-DATE
+> Task :plugin-contract:parseDebugLocalResources UP-TO-DATE
+> Task :plugin-contract:generateDebugRFile UP-TO-DATE
+> Task :netease-plugin:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :plugin-contract:compileDebugKotlin UP-TO-DATE
+> Task :plugin-contract:javaPreCompileDebug UP-TO-DATE
+> Task :plugin-contract:compileDebugJavaWithJavac UP-TO-DATE
+> Task :plugin-contract:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :plugin-contract:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :plugin-contract:processDebugJavaRes UP-TO-DATE
+> Task :netease-plugin:compileDebugKotlin UP-TO-DATE
+> Task :netease-plugin:compileDebugJavaWithJavac NO-SOURCE
+> Task :netease-plugin:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :netease-plugin:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :netease-plugin:processDebugJavaRes UP-TO-DATE
+> Task :netease-plugin:compileDebugUnitTestKotlin
+> Task :netease-plugin:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :netease-plugin:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :netease-plugin:testDebugUnitTest
+
+NeteaseHttpNetworkTest > emptyAccountJarSendsTheSameEapiHeaderInTheActualHttpCookieWithoutPersistingIt FAILED
+    java.lang.AssertionError at NeteaseHttpNetworkTest.kt:107
+
+NeteaseHttpNetworkTest > eapiCookiesKeepAccountScopeAndSaveOnlyValidResponseCookies FAILED
+    java.lang.AssertionError at NeteaseHttpNetworkTest.kt:107
+
+3 tests completed, 2 failed
+
+> Task :netease-plugin:testDebugUnitTest FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':netease-plugin:testDebugUnitTest'.
+> There were failing tests. See the report at: netease-plugin/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 18s
+27 actionable tasks: 2 executed, 25 up-to-date

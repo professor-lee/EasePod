@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.core.WheelGeometryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-08T11:40:06" hostname="localhost" time="0.4">
+  <properties/>
+  <testcase name="centerNeverBecomesDirectionalTap()" classname="app.easepod.core.WheelGeometryTest" time="0.358"/>
+  <testcase name="seamCrossingPreservesDirection()" classname="app.easepod.core.WheelGeometryTest" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

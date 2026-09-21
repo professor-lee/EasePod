@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.data.BackupValidationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-09-08T11:40:42" hostname="localhost" time="31.785">
+  <properties/>
+  <testcase name="fullScreenRoundTripsAndLegacyBackupsRemainWindowed" classname="app.easepod.data.BackupValidationTest" time="18.093"/>
+  <testcase name="uuidCaseCannotBypassDuplicateIdentityValidation" classname="app.easepod.data.BackupValidationTest" time="0.243"/>
+  <testcase name="duplicateKeysMalformedUtf8AndDeepJsonAreRejected" classname="app.easepod.data.BackupValidationTest" time="0.31"/>
+  <testcase name="encryptionAuthenticatesHeaderContentAndPassphrase" classname="app.easepod.data.BackupValidationTest" time="12.536"/>
+  <testcase name="networkQualityRoundTripsAndLegacyBackupsRetainTheDefault" classname="app.easepod.data.BackupValidationTest" time="0.118"/>
+  <testcase name="duplicateSourceKeysAreRejectedAndPrivateScopesAreRemappedToUuid" classname="app.easepod.data.BackupValidationTest" time="0.239"/>
+  <testcase name="candidateValidationRejectsCrossRootMembershipAndDuplicatePositions" classname="app.easepod.data.BackupValidationTest" time="0.241"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

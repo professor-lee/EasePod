@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.CloudWireContractTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-08T14:47:45" hostname="localhost" time="7.768">
+  <properties/>
+  <testcase name="libraryResponseRoundTripKeepsAllOptionalRecordsBounded" classname="app.easepod.plugins.CloudWireContractTest" time="2.601"/>
+  <testcase name="oldRequestFramesStillDecodeWithoutAMutationTail" classname="app.easepod.plugins.CloudWireContractTest" time="1.266"/>
+  <testcase name="preferencesRestorePendingReceiptsAcrossRepositoryInstances" classname="app.easepod.plugins.CloudWireContractTest" time="1.619"/>
+  <testcase name="editsRequireRevisionAndEntryIdsInsteadOfAmbiguousSongPositions" classname="app.easepod.plugins.CloudWireContractTest" time="1.016"/>
+  <testcase name="mutationRoundTripRetainsRevisionAndDuplicatePositionIdentity" classname="app.easepod.plugins.CloudWireContractTest" time="1.229"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

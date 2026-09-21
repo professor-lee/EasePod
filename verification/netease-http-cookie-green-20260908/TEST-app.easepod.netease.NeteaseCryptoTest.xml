@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseCryptoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-08T15:28:54" hostname="localhost" time="0.018">
+  <properties/>
+  <testcase name="productionWeapiUsesANewSecretForEachRequest" classname="app.easepod.netease.NeteaseCryptoTest" time="0.011"/>
+  <testcase name="eapiMatchesIndependentSignatureAndCipherVector" classname="app.easepod.netease.NeteaseCryptoTest" time="0.003"/>
+  <testcase name="weapiMatchesIndependentAesAndRsaVector" classname="app.easepod.netease.NeteaseCryptoTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

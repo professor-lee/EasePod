@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.PluginContractTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-08T11:41:18" hostname="localhost" time="3.052">
+  <properties/>
+  <testcase name="malformedFrameIsRejected" classname="app.easepod.plugins.PluginContractTest" time="0.185"/>
+  <testcase name="mediaPolicyRejectsLocalAndUnregisteredAddresses" classname="app.easepod.plugins.PluginContractTest" time="0.192"/>
+  <testcase name="mediaIdentityKeepsFieldBoundariesAndNamespaces" classname="app.easepod.plugins.PluginContractTest" time="0.444"/>
+  <testcase name="qualityPreferenceRequiresNegotiatedCapabilityAndOldPluginsKeepStandard" classname="app.easepod.plugins.PluginContractTest" time="0.439"/>
+  <testcase name="framedRecordSkipsFutureOptionalFields" classname="app.easepod.plugins.PluginContractTest" time="0.143"/>
+  <testcase name="playbackReaderAcceptsOldFrameWithoutConsumingFollowingRecord" classname="app.easepod.plugins.PluginContractTest" time="0.158"/>
+  <testcase name="oversizedPayloadIsRejectedBeforeBinder" classname="app.easepod.plugins.PluginContractTest" time="0.695"/>
+  <testcase name="catalogSeparatesSongsAndContainersWithoutLosingRepeatedPositions" classname="app.easepod.plugins.PluginContractTest" time="0.381"/>
+  <testcase name="oversizedPageIsRejectedOnReceive" classname="app.easepod.plugins.PluginContractTest" time="0.281"/>
+  <testcase name="playbackIntegrityMetadataRoundTripsInsideEnvelope" classname="app.easepod.plugins.PluginContractTest" time="0.13"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

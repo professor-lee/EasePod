@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseHttpNetworkTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:16" hostname="localhost" time="2.559">
+  <properties/>
+  <testcase name="emptyAccountJarSendsTheSameEapiHeaderInTheActualHttpCookieWithoutPersistingIt" classname="app.easepod.netease.NeteaseHttpNetworkTest" time="1.738"/>
+  <testcase name="weapiKeepsItsNormalCookieJarWithoutEapiMetadata" classname="app.easepod.netease.NeteaseHttpNetworkTest" time="0.397"/>
+  <testcase name="eapiCookiesKeepAccountScopeAndSaveOnlyValidResponseCookies" classname="app.easepod.netease.NeteaseHttpNetworkTest" time="0.423"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

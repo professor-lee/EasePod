@@ -1,0 +1,14 @@
+{
+  "manifestVersion": 1,
+  "pluginId": "app.easepod.sampleplugin",
+  "kind": "music-service",
+  "displayName": "SoundHelix Sample",
+  "packageName": "app.easepod.sampleplugin",
+  "serviceClass": "app.easepod.sampleplugin.SampleMusicService",
+  "protocol": { "major": 1, "minMinor": 0, "maxMinor": 0 },
+  "versionCode": 1,
+  "capabilities": ["catalog.browse", "catalog.search", "catalog.details", "playback.resolve", "lyrics.read", "account.list"],
+  "networkDomains": ["www.soundhelix.com"],
+  "privacyPolicyUrl": null,
+  "license": "LicenseRef-SoundHelix-Examples"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.ThemeArchiveTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-08T15:59:30" hostname="localhost" time="35.585">
+  <properties/>
+  <testcase name="installInspectRollbackAndUninstallArePersistentAndAtomic" classname="app.easepod.plugins.ThemeArchiveTest" time="20.193"/>
+  <testcase name="invalidColorAndLowContrastFallBackToReadablePalette" classname="app.easepod.plugins.ThemeArchiveTest" time="0.205"/>
+  <testcase name="typographyUsesFiniteReadableTokensAndInvalidValuesFallBack" classname="app.easepod.plugins.ThemeArchiveTest" time="0.228"/>
+  <testcase name="rollbackRejectsCorruptedPreviousAssetWithoutChangingCurrentVersion" classname="app.easepod.plugins.ThemeArchiveTest" time="10.812"/>
+  <testcase name="validatesRealBitmapAndRejectsOversizedDimensions" classname="app.easepod.plugins.ThemeArchiveTest" time="1.573"/>
+  <testcase name="rejectsLinksExecutablesUnsupportedTokensAndMalformedJson" classname="app.easepod.plugins.ThemeArchiveTest" time="0.38"/>
+  <testcase name="deferredStartupLeavesExternalThemesUnreadUntilExplicitInitialization" classname="app.easepod.plugins.ThemeArchiveTest" time="0.128"/>
+  <testcase name="rejectsTraversalAbsolutePathsDuplicatesAndCaseCollisions" classname="app.easepod.plugins.ThemeArchiveTest" time="0.235"/>
+  <testcase name="enforcesActualExpandedSizeEntryCountAndJsonSize" classname="app.easepod.plugins.ThemeArchiveTest" time="1.51"/>
+  <testcase name="installedAssetPathsFollowPublishedVersionAndRollback" classname="app.easepod.plugins.ThemeArchiveTest" time="0.156"/>
+  <testcase name="assetSlotsRequireExistingPackagedBitmapsAndKnownSlotNames" classname="app.easepod.plugins.ThemeArchiveTest" time="0.161"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

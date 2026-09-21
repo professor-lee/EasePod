@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.SignedPluginIndexTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-08T11:41:21" hostname="localhost" time="10.757">
+  <properties/>
+  <testcase name="requiresExactArtifactIdentityAndHonorsRevocations" classname="app.easepod.plugins.SignedPluginIndexTest" time="10.281"/>
+  <testcase name="acceptsTrustedSignatureAndRejectsReplayAcrossInstances" classname="app.easepod.plugins.SignedPluginIndexTest" time="0.25"/>
+  <testcase name="rejectsUnknownKeyTamperingAndExpiredIndex" classname="app.easepod.plugins.SignedPluginIndexTest" time="0.226"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

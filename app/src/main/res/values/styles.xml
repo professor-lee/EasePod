@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.EasePod" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorAccent">#2878BD</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#E1E1E1</item>
+    </style>
+</resources>

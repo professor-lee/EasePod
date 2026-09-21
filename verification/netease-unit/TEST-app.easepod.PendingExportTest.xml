@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.PendingExportTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-08T14:49:23" hostname="localhost" time="0.334">
+  <properties/>
+  <testcase name="detachedInstallReachesReplacementHostExactlyOnce" classname="app.easepod.PendingExportTest" time="0.087"/>
+  <testcase name="clearErasesPickerAndQueuedBytesAndRemovesPendingDelivery" classname="app.easepod.PendingExportTest" time="0.084"/>
+  <testcase name="attachedEffectsAreImmediateAndDetachStopsUsingTheOldHost" classname="app.easepod.PendingExportTest" time="0.022"/>
+  <testcase name="queuedInstallReplacingExportErasesExportBytes" classname="app.easepod.PendingExportTest" time="0.006"/>
+  <testcase name="staleExportIsErasedAndCannotReplayAfterAnotherAttachment" classname="app.easepod.PendingExportTest" time="0.009"/>
+  <testcase name="detachedExportReachesReplacementHostOnceForItsGeneration" classname="app.easepod.PendingExportTest" time="0.038"/>
+  <testcase name="viewModelRemovalErasesPendingDataAndDetachesTheHost" classname="app.easepod.PendingExportTest" time="0.012"/>
+  <testcase name="replacingQueuedExportErasesOnlyThePreviousPayload" classname="app.easepod.PendingExportTest" time="0.005"/>
+  <testcase name="staleOrClearedInstallNeverReplays" classname="app.easepod.PendingExportTest" time="0.012"/>
+  <testcase name="detachedNonExportEffectsAreNotReplayedOrAllowedToReplaceAnExport" classname="app.easepod.PendingExportTest" time="0.04"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

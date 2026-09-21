@@ -1,0 +1,39 @@
+> Task :netease-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:preBuild UP-TO-DATE
+> Task :netease-plugin:preBuild UP-TO-DATE
+> Task :plugin-contract:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:preDebugBuild UP-TO-DATE
+> Task :netease-plugin:generateDebugResValues UP-TO-DATE
+> Task :netease-plugin:generateDebugResources UP-TO-DATE
+> Task :netease-plugin:packageDebugResources UP-TO-DATE
+> Task :netease-plugin:parseDebugLocalResources UP-TO-DATE
+> Task :netease-plugin:generateDebugRFile UP-TO-DATE
+> Task :netease-plugin:javaPreCompileDebug UP-TO-DATE
+> Task :netease-plugin:preDebugUnitTestBuild UP-TO-DATE
+> Task :netease-plugin:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :plugin-contract:compileDebugAidl UP-TO-DATE
+> Task :plugin-contract:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :plugin-contract:generateDebugResValues UP-TO-DATE
+> Task :plugin-contract:generateDebugResources UP-TO-DATE
+> Task :plugin-contract:packageDebugResources UP-TO-DATE
+> Task :plugin-contract:parseDebugLocalResources UP-TO-DATE
+> Task :plugin-contract:generateDebugRFile UP-TO-DATE
+> Task :netease-plugin:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :plugin-contract:compileDebugKotlin UP-TO-DATE
+> Task :plugin-contract:javaPreCompileDebug UP-TO-DATE
+> Task :plugin-contract:compileDebugJavaWithJavac UP-TO-DATE
+> Task :plugin-contract:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :plugin-contract:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :plugin-contract:processDebugJavaRes UP-TO-DATE
+> Task :netease-plugin:compileDebugKotlin
+> Task :netease-plugin:compileDebugJavaWithJavac NO-SOURCE
+> Task :netease-plugin:bundleLibRuntimeToJarDebug
+> Task :netease-plugin:processDebugJavaRes UP-TO-DATE
+> Task :netease-plugin:bundleLibCompileToJarDebug
+> Task :netease-plugin:compileDebugUnitTestKotlin
+> Task :netease-plugin:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :netease-plugin:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :netease-plugin:testDebugUnitTest
+
+BUILD SUCCESSFUL in 9s
+27 actionable tasks: 5 executed, 22 up-to-date

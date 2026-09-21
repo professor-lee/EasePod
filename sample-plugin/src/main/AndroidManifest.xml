@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <queries><package android:name="app.easepod" /></queries>
+    <application android:label="EasePod Sample Plugin" android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules"
+        android:usesCleartextTraffic="false" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity android:name=".HostApprovalActivity" android:exported="true">
+            <!-- Opened explicitly by EasePod's host-approval action; no launcher icon. -->
+            <intent-filter><action android:name="app.easepod.action.APPROVE_HOST" /><category android:name="android.intent.category.DEFAULT" /></intent-filter>
+        </activity>
+        <service android:name=".SampleMusicService" android:exported="true" android:process=":music">
+            <intent-filter><action android:name="app.easepod.action.MUSIC_PLUGIN" /></intent-filter>
+            <meta-data android:name="app.easepod.plugin.MANIFEST" android:resource="@raw/plugin_manifest" />
+        </service>
+    </application>
+</manifest>

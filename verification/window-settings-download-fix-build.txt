@@ -1,0 +1,75 @@
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :playback:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :playback:preBuild UP-TO-DATE
+> Task :playback:preDebugBuild UP-TO-DATE
+> Task :playback:generateDebugResValues UP-TO-DATE
+> Task :playback:generateDebugResources UP-TO-DATE
+> Task :playback:packageDebugResources UP-TO-DATE
+> Task :playback:parseDebugLocalResources UP-TO-DATE
+> Task :playback:generateDebugRFile UP-TO-DATE
+> Task :playback:javaPreCompileDebug UP-TO-DATE
+> Task :playback:preDebugAndroidTestBuild UP-TO-DATE
+> Task :playback:writeDebugAarMetadata UP-TO-DATE
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :playback:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :playback:compileDebugLibraryResources UP-TO-DATE
+> Task :playback:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :playback:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :playback:generateDebugAndroidTestResources UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :playback:extractDeepLinksDebug UP-TO-DATE
+> Task :playback:processDebugManifest UP-TO-DATE
+> Task :playback:processDebugAndroidTestManifest UP-TO-DATE
+> Task :playback:processDebugAndroidTestResources UP-TO-DATE
+> Task :playback:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :playback:compileDebugAndroidTestShaders NO-SOURCE
+> Task :playback:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :playback:mergeDebugShaders UP-TO-DATE
+> Task :playback:compileDebugShaders NO-SOURCE
+> Task :playback:generateDebugAssets UP-TO-DATE
+> Task :playback:packageDebugAssets UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :playback:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :playback:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :playback:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :playback:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :playback:mergeDebugJniLibFolders UP-TO-DATE
+> Task :playback:mergeDebugNativeLibs NO-SOURCE
+> Task :playback:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :playback:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :playback:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :playback:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :playback:preDebugUnitTestBuild UP-TO-DATE
+> Task :playback:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :playback:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :playback:compileDebugKotlin
+> Task :playback:compileDebugJavaWithJavac NO-SOURCE
+> Task :playback:bundleLibCompileToJarDebug
+> Task :playback:bundleLibRuntimeToJarDebug
+> Task :playback:processDebugJavaRes UP-TO-DATE
+> Task :playback:bundleLibRuntimeToDirDebug
+> Task :playback:mergeLibDexDebugAndroidTest
+> Task :playback:compileDebugUnitTestKotlin
+> Task :playback:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :playback:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :playback:testDebugUnitTest
+> Task :playback:compileDebugAndroidTestKotlin
+> Task :playback:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :playback:dexBuilderDebugAndroidTest
+> Task :playback:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :playback:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :playback:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :playback:mergeProjectDexDebugAndroidTest
+> Task :playback:packageDebugAndroidTest
+> Task :playback:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :playback:assembleDebugAndroidTest
+
+BUILD SUCCESSFUL in 15s
+52 actionable tasks: 11 executed, 41 up-to-date

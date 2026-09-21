@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseCatalogTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:15" hostname="localhost" time="0.451">
+  <properties/>
+  <testcase name="homeSubscriptionsCanPaginateUsingAnExplicitTotalWithoutHasMore" classname="app.easepod.netease.NeteaseCatalogTest" time="0.11"/>
+  <testcase name="homeCatalogRequiresAnAccountAndOffersOnlySupportedContainers" classname="app.easepod.netease.NeteaseCatalogTest" time="0.045"/>
+  <testcase name="albumAndArtistSearchUseProviderTypesAndTypedIds" classname="app.easepod.netease.NeteaseCatalogTest" time="0.012"/>
+  <testcase name="homeTracksAndFavoritesUseTheCompleteFavoriteIdListAndDailyRemainsSeparate" classname="app.easepod.netease.NeteaseCatalogTest" time="0.016"/>
+  <testcase name="homeSubscriptionsDistinguishEmptyLibrariesFromMissingOrFailedProviderData" classname="app.easepod.netease.NeteaseCatalogTest" time="0.013"/>
+  <testcase name="playlistReadsAllTrackIdsThenOnlyFetchesRequestedPageInPlaylistOrder" classname="app.easepod.netease.NeteaseCatalogTest" time="0.024"/>
+  <testcase name="homeCoverAndPlaylistPagesShareProviderDataButCannotShareCursors" classname="app.easepod.netease.NeteaseCatalogTest" time="0.027"/>
+  <testcase name="artworkDropsQueriesWithoutDoubleEscapingEncodedPath" classname="app.easepod.netease.NeteaseCatalogTest" time="0.006"/>
+  <testcase name="businessAndTransportErrorsCannotBecomeSuccessfulEmptyCatalogs" classname="app.easepod.netease.NeteaseCatalogTest" time="0.016"/>
+  <testcase name="searchPaginationBindsAccountQueryKindParentAndUserIdentity" classname="app.easepod.netease.NeteaseCatalogTest" time="0.012"/>
+  <testcase name="privatePlaylistsAndFavoritesUseVerifiedUserId" classname="app.easepod.netease.NeteaseCatalogTest" time="0.007"/>
+  <testcase name="privateRootUsesContractContainerKindsAndPublicCannotOpenPrivateCategories" classname="app.easepod.netease.NeteaseCatalogTest" time="0.01"/>
+  <testcase name="plainLyricsSkipMetadataAndLongTextIsBounded" classname="app.easepod.netease.NeteaseCatalogTest" time="0.041"/>
+  <testcase name="homeSubscribedAlbumsAndArtistsUseBoundedProviderPaginationAndTypedIds" classname="app.easepod.netease.NeteaseCatalogTest" time="0.009"/>
+  <testcase name="invalidIdsAndCursorsNeverReachTheApi" classname="app.easepod.netease.NeteaseCatalogTest" time="0.008"/>
+  <testcase name="dailyRecommendationsMapSongsAndDurationWithoutLeakingProviderJson" classname="app.easepod.netease.NeteaseCatalogTest" time="0.006"/>
+  <testcase name="publicRecommendationsMapTypedIdsAndHttpsArtwork" classname="app.easepod.netease.NeteaseCatalogTest" time="0.005"/>
+  <testcase name="playbackQualityMapsFourTiersAndReportsActualGrantedTier" classname="app.easepod.netease.NeteaseCatalogTest" time="0.015"/>
+  <testcase name="albumDetailsAndArtistBrowseSelectCorrectEndpoints" classname="app.easepod.netease.NeteaseCatalogTest" time="0.007"/>
+  <testcase name="translatedLyricsRemainBoundedAndPaginateAtMatchedTimestamps" classname="app.easepod.netease.NeteaseCatalogTest" time="0.018"/>
+  <testcase name="upstreamRepresentationDigestIdentifiesActualQualityWithoutAuthorizingCaching" classname="app.easepod.netease.NeteaseCatalogTest" time="0.016"/>
+  <testcase name="unsafeMediaUrlsAreRejectedAndOnlyKnownCdnHttpIsUpgraded" classname="app.easepod.netease.NeteaseCatalogTest" time="0.005"/>
+  <testcase name="previewIsExplicitAndEntitlementFailureDoesNotReturnAStream" classname="app.easepod.netease.NeteaseCatalogTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

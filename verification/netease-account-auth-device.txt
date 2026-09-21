@@ -1,0 +1,8 @@
+
+app.easepod.ui.AccountAuthDeviceTest:....
+
+Time: 8.774
+
+OK (4 tests)
+
+

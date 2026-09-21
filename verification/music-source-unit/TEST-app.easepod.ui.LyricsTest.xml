@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.ui.LyricsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:28" hostname="localhost" time="0.109">
+  <properties/>
+  <testcase name="multiTimestampFractionAndOffsetAreApplied" classname="app.easepod.ui.LyricsTest" time="0.101"/>
+  <testcase name="plainTextIsReadableWithoutInventedTiming" classname="app.easepod.ui.LyricsTest" time="0.005"/>
+  <testcase name="invalidSecondsAndEmptyInputDoNotCreateTimedRows" classname="app.easepod.ui.LyricsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

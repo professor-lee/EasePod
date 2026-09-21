@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.PendingInstallStoreTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-08T15:59:02" hostname="localhost" time="4.152">
+  <properties/>
+  <testcase name="malformedReceiptIsDiscardedWithoutUsingItsFilePath" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.696"/>
+  <testcase name="themeReceiptsGainAnIdentityAndHashButNeverClaimAnApkInstallResult" classname="app.easepod.plugins.PendingInstallStoreTest" time="1.145"/>
+  <testcase name="staleCallbacksCannotAdvanceOrDeleteANewerCandidate" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.737"/>
+  <testcase name="missingCacheOnlyRestoresAnExactlyMatchingInstalledPackage" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.485"/>
+  <testcase name="receiptSurvivesRecreationWithAnExplicitStageAndNoBackupLocation" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.371"/>
+  <testcase name="pathEscapeAndSymlinkAreRejectedWithoutDeletingTheirTargets" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.274"/>
+  <testcase name="changedBytesAndChangedParsedIdentityInvalidateTheReceipt" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.216"/>
+  <testcase name="declaredChecksumMismatchDoesNotCreateAReceipt" classname="app.easepod.plugins.PendingInstallStoreTest" time="0.215"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.plugins.CloudLibraryTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-09-08T11:40:47" hostname="localhost" time="0.653">
+  <properties/>
+  <testcase name="goingOfflineAfterSendingRetainsUnknownReceipt" classname="app.easepod.plugins.CloudLibraryTest" time="0.414"/>
+  <testcase name="offlineAndPublicWritesAreRejectedBeforeAnyRequestOrReceipt" classname="app.easepod.plugins.CloudLibraryTest" time="0.002"/>
+  <testcase name="lockingWhileCheckingPlaylistPermissionsPreventsTheWrite" classname="app.easepod.plugins.CloudLibraryTest" time="0.022"/>
+  <testcase name="responseWithWrongMutationIdentityNeverBecomesSuccess" classname="app.easepod.plugins.CloudLibraryTest" time="0.012"/>
+  <testcase name="timeoutReadsBackWithoutResendingTheWrite" classname="app.easepod.plugins.CloudLibraryTest" time="0.011"/>
+  <testcase name="unknownPlaylistReceiptSurvivesRestartAndBlocksReplay" classname="app.easepod.plugins.CloudLibraryTest" time="0.122"/>
+  <testcase name="receiptMustBeDurableBeforeDispatch" classname="app.easepod.plugins.CloudLibraryTest" time="0.035"/>
+  <testcase name="favoriteReadbackConfirmsTheDesiredStateWithoutOptionalMutationLookup" classname="app.easepod.plugins.CloudLibraryTest" time="0.016"/>
+  <testcase name="versionConflictAndMissingOwnershipDoNotSendAWrite" classname="app.easepod.plugins.CloudLibraryTest" time="0.004"/>
+  <testcase name="createRequiresItsOwnCapabilityAndAnAuthoritativeIdentityAndRevision" classname="app.easepod.plugins.CloudLibraryTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

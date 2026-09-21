@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.StartupCrashPolicyTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:28" hostname="localhost" time="0.023">
+  <properties/>
+  <testcase name="twoConfirmedStartupCrashesTriggerRecovery" classname="app.easepod.StartupCrashPolicyTest" time="0.012"/>
+  <testcase name="androidConfirmsNativeCrashWithoutJavaHandler" classname="app.easepod.StartupCrashPolicyTest" time="0.004"/>
+  <testcase name="crashesAfterAStableScreenAreNotStartupCrashes" classname="app.easepod.StartupCrashPolicyTest" time="0.001"/>
+  <testcase name="recordedCrashAndAndroidExitOnlyCountOnce" classname="app.easepod.StartupCrashPolicyTest" time="0.0"/>
+  <testcase name="unrelatedProcessAndOldCrashesDoNotCount" classname="app.easepod.StartupCrashPolicyTest" time="0.0"/>
+  <testcase name="processKillsAndMissingExitHistoryBreakTheStreak" classname="app.easepod.StartupCrashPolicyTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

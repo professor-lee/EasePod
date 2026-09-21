@@ -1,0 +1,14 @@
+{
+  "manifestVersion": 1,
+  "pluginId": "app.easepod.netease",
+  "kind": "music-service",
+  "displayName": "网易云音乐",
+  "packageName": "app.easepod.netease",
+  "serviceClass": "app.easepod.netease.NeteaseMusicService",
+  "protocol": { "major": 1, "minMinor": 0, "maxMinor": 0 },
+  "versionCode": 1,
+  "capabilities": ["catalog.browse", "catalog.search", "catalog.details", "catalog.home", "playback.resolve", "lyrics.read", "account.list", "account.qr", "account.signOut", "library.favorite", "playback.quality.standard", "playback.quality.high", "playback.quality.lossless", "playback.quality.hires"],
+  "networkDomains": ["music.163.com", "p1.music.126.net", "p2.music.126.net", "p3.music.126.net", "p4.music.126.net", "m1.music.126.net", "m2.music.126.net", "m3.music.126.net", "m4.music.126.net", "m5.music.126.net", "m6.music.126.net", "m7.music.126.net", "m8.music.126.net", "m9.music.126.net", "m10.music.126.net", "m11.music.126.net", "m12.music.126.net", "m701.music.126.net", "m702.music.126.net", "m801.music.126.net", "m802.music.126.net"],
+  "privacyPolicyUrl": null,
+  "license": "LicenseRef-EasePod-Netease"
+}

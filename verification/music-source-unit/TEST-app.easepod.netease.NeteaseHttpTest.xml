@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.easepod.netease.NeteaseHttpTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-08T16:05:19" hostname="localhost" time="0.52">
+  <properties/>
+  <testcase name="bothModesStayOnTheirHttpsHostsAndKeepInputUnchanged" classname="app.easepod.netease.NeteaseHttpTest" time="0.189"/>
+  <testcase name="invalidPathsAndOversizedRequestsNeverReachTheTransport" classname="app.easepod.netease.NeteaseHttpTest" time="0.095"/>
+  <testcase name="statusAndNetworkFailuresStayDistinctAndNeverExposeServerText" classname="app.easepod.netease.NeteaseHttpTest" time="0.067"/>
+  <testcase name="malformedJsonTrailingContentAndInvalidUtf8AreRejected" classname="app.easepod.netease.NeteaseHttpTest" time="0.044"/>
+  <testcase name="declaredAndStreamingOversizedBodiesAreClosedAndRejected" classname="app.easepod.netease.NeteaseHttpTest" time="0.044"/>
+  <testcase name="coroutineCancellationCancelsTheUnderlyingCall" classname="app.easepod.netease.NeteaseHttpTest" time="0.029"/>
+  <testcase name="eapiIncludesOnlyCookiesMatchingItsOriginAndDisablesEncryptedResponses" classname="app.easepod.netease.NeteaseHttpTest" time="0.01"/>
+  <testcase name="qrAndOtherBusinessCodesRemainAvailableToTheCaller" classname="app.easepod.netease.NeteaseHttpTest" time="0.04"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
