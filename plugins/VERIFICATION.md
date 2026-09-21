@@ -1,6 +1,6 @@
 # 插件验证记录
 
-2026-09-08，HiBreak Android 14 / API 34，ADB 序列 B651…0383。
+2026-09-08，HiBreak Android 14 / API 34，ADB 序列 B651…0383（保留首尾用于批次追溯）。
 
 独立安装 `sample-plugin-debug.apk` 与测试 APK，通过 `adb shell am instrument -w -r app.easepod.sampleplugin.test/androidx.test.runner.AndroidJUnitRunner` 执行。结果为 `OK (12 tests)`，耗时 8.258 秒。测试断言 Binder 为跨进程代理。
 
