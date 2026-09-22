@@ -1,4 +1,4 @@
-<h1 align="center"><img src="assets/logo.svg" width="96" height="96" alt="EasePod"></h1>
+<h1 align="center"><img src="assets/app-logo.svg" width="96" height="96" alt="EasePod"></h1>
 
 <p align="center">
 	<a href="README.md">English</a>
